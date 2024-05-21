@@ -1,6 +1,7 @@
 import express from 'express';
 import { configureRoutes } from './routes.js';
 import { configureSwagger } from './swagger.js';
+import * as _ from './dependencies.js';
 
 const
   app = express(),
