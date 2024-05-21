@@ -2,7 +2,7 @@
   get:
     tags:
       - User
-    summary: Get a users list
+    summary: Get an users list
     produce:
       - application/json
     parameters:
