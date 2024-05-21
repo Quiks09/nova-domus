@@ -8,6 +8,8 @@
     parameters:
       - name: username
         in: query
+      - name: displayname
+        in: query
     responses:
       '200': 
         description: Success
