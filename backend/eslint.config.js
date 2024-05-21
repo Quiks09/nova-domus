@@ -5,7 +5,7 @@ import pluginJs from '@eslint/js';
 
 export default [
   { languageOptions: { globals: globals.browser }},
-  pluginJs.configs.all,
+  pluginJs.configs.recommended,
   {
     rules: {
       'func-style': 'off',

@@ -1,5 +1,5 @@
-import { installUserRoutes } from './components/users/routes.js';
+import { configureUserRoutes } from './components/users/routes.js';
 
-export function installRoutes(router) {
-  installUserRoutes(router);
+export function configureRoutes(router) {
+  configureUserRoutes(router);
 }

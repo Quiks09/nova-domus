@@ -1,13 +1,18 @@
 import express from 'express';
-import { installRoutes } from './routes.js';
+import { configureRoutes } from './routes.js';
+import { configureSwagger } from './swagger.js';
 
 const
   app = express(),
   port = 4000;
 
-installRoutes(app);
+const router = express.Router();
+app.use('/api', router);
 
-app.get('/', (req, res) => {
+configureRoutes(router);
+configureSwagger(router);
+
+router.get('/', (req, res) => {
   res.send("Hola 'Mundo!'");
 });
 

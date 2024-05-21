@@ -1,0 +1,24 @@
+/user:
+  get:
+    tags:
+      - User
+    summary: Get a users list
+    produce:
+      - application/json
+    parameters:
+      - name: username
+        in: query
+    responses:
+      '200': 
+        description: Success
+        content:
+          application/json:
+            type: object
+            properties:
+              username:
+                type: string
+              displayName:
+                type: String
+      '404':
+        description: Not found
+    
