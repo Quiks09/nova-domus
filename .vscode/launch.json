@@ -7,7 +7,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Iniciar backend",
+      "name": "Launch backend",
       "skipFiles": [
         "<node_internals>/**"
       ],
