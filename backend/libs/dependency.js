@@ -1,19 +1,19 @@
 export class Dependency {
     static dependenciesList = {};
 
-    static add(name, dependency){
-    if(this.dependenciesList[name]){
-        throw new Error(`Dependency ${name} already exists.`)
+    static add(dependencyName, dependency){
+    if(this.dependenciesList[dependencyName]){
+        throw new Error(`Dependency ${dependencyName} already exists.`)
     }
-    this.dependenciesList[name] = dependency;
+    this.dependenciesList[dependencyName] = dependency;
 }
 
     static get(name){
-        if(!this.dependenciesList[name]){
-            throw new Error(`Dependency ${name} does not exist.`)
+        if(!this.dependenciesList[dependencyName]){
+            throw new Error(`Dependency ${dependencyName} does not exist.`)
         }
 
-        return this.dependenciesList[name];
+        return this.dependenciesList[dependencyName];
     }
 
 }

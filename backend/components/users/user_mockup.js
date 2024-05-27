@@ -2,18 +2,25 @@ import { Dependency } from "../../libs/dependency.js";
 
 
 export class UserMockup{
-    static get() {
-        return [
-            {
-                username: 'pedro',
-                displayname: 'Pedro',
-            },
-            {
-                username: 'ana',
-                displayname: 'Ana Laura',
-            }
-        ];
+    static list= [
+        {
+            username: 'admin',
+            displayname: 'Adminstrador',
+        },
+        {
+            username: 'pedro',
+            displayname: 'Pedro Pe',
+        }
+
+    ]
+
+     getList() {
+        return UserMockup.list;
     };
+
+    create(data){
+        UserMockup.list.push(data);
+    }
 
 };
 

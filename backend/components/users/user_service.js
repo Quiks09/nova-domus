@@ -1,4 +1,4 @@
-import { Dependency } from "../../libs/dependency.js";
+import { Dependency } from '../../libs/dependency.js';
 
 
 export class UserService{
@@ -8,6 +8,33 @@ export class UserService{
             
     };
 
+    getList() {
+        return this.userData.getList();
+    }
+
+    getByUsernameOrNull(username){
+        const userList = this.userData.getList();
+        for(const user of userList){
+            if (user.username === username){
+                return user;
+            }
+        }
+    }
+
+    create(data){
+        if (!data.username){
+            throw new Error('Missing username parameter')
+        }
+
+        if (!data.displayName){
+            throw new Error('Missing username parameter')
+        }
+
+        if (this.getByUsernameOrNull(data.username)){
+            throw new Error('Username already exists')
+        }
+    }
+
 };
 
-Dependency.add('UserService', UserService);
+
