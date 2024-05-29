@@ -1,11 +1,12 @@
 import { Dependency } from '../../libs/dependency.js';
+import { MissingParameterError } from '../../libs/missing_parameter_error.js';
+import { ConflictError } from '../../libs/conflict_error.js';
+import bcrypt from 'bcrypt';
 
 
 export class UserService{
-    static get() {
-        const UserModel = Dependency.get('UserModel');
-        return UserModel.get();
-            
+    constructor() {
+        this.userData = Dependency.get('userData');
     };
 
     getList() {
@@ -19,20 +20,40 @@ export class UserService{
                 return user;
             }
         }
+
+        return null;
     }
 
-    create(data){
+    async hashPassword(password){
+        const saltRounds = 10;
+
+        const salt = await bcrypt.genSalt(saltRounds);
+        const hash = await bcrypt.hash(password, salt);
+
+        return hash;
+    }
+
+    async create(data){
         if (!data.username){
-            throw new Error('Missing username parameter')
+            throw new MissingParameterError('username');
         }
 
         if (!data.displayName){
-            throw new Error('Missing username parameter')
+            throw new MissingParameterError('displayName');
+        }
+
+        if (!data.password){
+            throw new MissingParameterError('password')
         }
 
         if (this.getByUsernameOrNull(data.username)){
-            throw new Error('Username already exists')
+            throw new ConflictError('Username already exists')
         }
+
+        data.hashedPassword = await this.hashPassword(data.password);
+        delete data.password;
+
+        this.userData.create(data);
     }
 
 };

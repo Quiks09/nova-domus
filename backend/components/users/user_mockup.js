@@ -1,6 +1,3 @@
-import { Dependency } from "../../libs/dependency.js";
-
-
 export class UserMockup{
     static list= [
         {
@@ -14,7 +11,7 @@ export class UserMockup{
 
     ]
 
-     getList() {
+    getList() {
         return UserMockup.list;
     };
 
@@ -23,5 +20,3 @@ export class UserMockup{
     }
 
 };
-
-Dependency.add('UserModel', UserMockup);

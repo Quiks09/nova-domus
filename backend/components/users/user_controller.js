@@ -2,21 +2,19 @@ import { Dependency } from '../../libs/dependency.js';
 
 export class UserController {
   constructor(){
-
-  }
-
-
-  static get(req, res) {
-    const UserService = Dependency.get('UserService');
-    res.send(UserService.get());
+    this.userService = Dependency.get('userService');
     
   }
 
-  post(req,res){
-    this.UserService.create(req.body);
-    res.status(204);
+  get(req, res) {
+    const userList = this.userService.getList();
+    res.send(userList);
   }
 
+  async post(req,res){
+    await this.userService.create(req.body);
+    res.status(204).end();
+  }
 }
 
 

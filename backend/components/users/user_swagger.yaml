@@ -1,6 +1,6 @@
 components:
   schemas:
-    User:
+    UserCreate:
       type: object
       properties:
         username:
@@ -11,6 +11,10 @@ components:
           type: string
           required: true
           example: test
+        password:
+          type: string
+          required: true
+          example: 1234
 
 /user:
   get:
@@ -39,15 +43,19 @@ components:
         description: Not found
 
   post:
-  tags:
+    tags:
       - User
     summary: Add a new user from body data
+    consumes:
+      - application/json
     requestBody:
       required: true
-      icontent:
-        application/json
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UserCreate'
     responses:
       '204':
         description: No content
       '400':
-        description: Error
+        description: parameters error
