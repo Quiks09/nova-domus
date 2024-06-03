@@ -1,4 +1,4 @@
-import { UserController } from '../login/login_controller.js';
+import { UserController } from './login_controller.js';
 
 export function configureUserRoutes(router) {
   router.get('/user', (req,res) => (new UserController).get(req,res));

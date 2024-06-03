@@ -2,18 +2,19 @@ import express from 'express';
 import { configureRoutes } from './routes.js';
 import { configureSwagger } from './swagger.js';
 import { configureDependencies } from './dependencies.js';
+import { configureMiddlewares } from './middlewares.js';
 export * from './dependencies.js';
 
 const
   app = express(),
   port = 4000;
 
-app.use('/', express.json());
+  
 
-const router = express.Router();
-app.use('/api', router);
-
+  
 configureDependencies();
+const router = configureMiddlewares(app);
+
 configureRoutes(router);
 configureSwagger(router);
 
