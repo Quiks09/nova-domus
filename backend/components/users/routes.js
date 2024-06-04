@@ -1,12 +1,7 @@
+import { asyncHandler } from '../../libs/asyncHandler.js';
 import { UserController } from '../login/login_controller.js';
 
 export function configureUserRoutes(router) {
-  router.get('/user', (req,res) => (new UserController).get(req,res));
-  router.post(
-    '/user', 
-    (req,res,next) => {
-      (new UserController).post(req,res)
-        .catch(next);
-    }
-  );
+  router.get('/user', asyncHandler(UserController, 'get'));
+  router.post('/user', asyncHandler(UserController, 'post'));
 }

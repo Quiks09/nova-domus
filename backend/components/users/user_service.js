@@ -1,61 +1,70 @@
+import { ConflictError } from '../../libs/conflict_error.js';
 import { Dependency } from '../../libs/dependency.js';
 import { MissingParameterError } from '../../libs/missing_parameter_error.js';
-import { ConflictError } from '../../libs/conflict_error.js';
 import bcrypt from 'bcrypt';
+import * as uuid from 'uuid';
 
+export class UserService {
+  constructor() {
+    this.userData = Dependency.get('userData');
+  }
 
-export class UserService{
-    constructor() {
-        this.userData = Dependency.get('userData');
-    };
+ async getList(filters, option) {
+    return this.userData.getList(filters,option);
+  }
 
-    getList() {
-        return this.userData.getList();
+ async getForUsernameOrNull(username) {
+    const userList = await this.userData.getList({username});
+    if(userList.length){
+        return userList[0];
+    }
+    return null;
+
+  }
+
+  async getForUuidOrNull(uuid) {
+    const userList = await this.userData.getList({uuid});
+    if(userList.length){
+        return userList[0];
+    }
+    return null;
+
+  }
+
+  async hashPassword(password){
+    const saltRounds = 10;
+
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hash = await bcrypt.hash(password, salt);
+
+    return hash;
+   
+  }
+
+  async create(data) {
+    if (!data.username) {
+      throw new MissingParameterError('username');
     }
 
-    getByUsernameOrNull(username){
-        const userList = this.userData.getList();
-        for(const user of userList){
-            if (user.username === username){
-                return user;
-            }
-        }
-
-        return null;
+    if (!data.displayName) {
+      throw new MissingParameterError('displayName');
     }
 
-    async hashPassword(password){
-        const saltRounds = 10;
-
-        const salt = await bcrypt.genSalt(saltRounds);
-        const hash = await bcrypt.hash(password, salt);
-
-        return hash;
+    if (!data.password) {
+      throw new Error('Password');
     }
 
-    async create(data){
-        if (!data.username){
-            throw new MissingParameterError('username');
-        }
-
-        if (!data.displayName){
-            throw new MissingParameterError('displayName');
-        }
-
-        if (!data.password){
-            throw new MissingParameterError('password')
-        }
-
-        if (this.getByUsernameOrNull(data.username)){
-            throw new ConflictError('Username already exists')
-        }
-
-        data.hashedPassword = await this.hashPassword(data.password);
-        delete data.password;
-
-        this.userData.create(data);
+    if (this.getForUsernameOrNull(data.username)) {
+      throw new ConflictError('Username already exists.');
     }
 
-};
+    data.uuid = uuid.v4();
+
+    data.hashedPassword = await this.hashPassword(data.password);
+    delete data.password;
+
+    this.userData.create(data);
+  }
+}
 
 
