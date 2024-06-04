@@ -33,9 +33,10 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/UserCreate'
+            $ref: '#/components/schemas/Login'
     responses:
       '204':
         description: No content
+          $ref: '#/components/schemas/AuthorizationToken'
       '400':
         description: parameters error
