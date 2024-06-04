@@ -54,7 +54,7 @@ export class UserService {
       throw new Error('Password');
     }
 
-    if (this.getForUsernameOrNull(data.username)) {
+    if (await this.getForUsernameOrNull(data.username)) {
       throw new ConflictError('Username already exists.');
     }
 

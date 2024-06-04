@@ -8,12 +8,12 @@ export function configureSwagger(router) {
       info: {
         title: 'Proyecto Desarrollo de Aplicativos',
         version: '1.0.0',
-        description: 'Projecto para completar el curso',
+        description: 'Proyecto para completar el curso',
       },
       servers: [{ url: '/api' }]
     },
     apis: [
-      './components/users/*',
+      './components/**/*.yaml',
     ],
   });
 
