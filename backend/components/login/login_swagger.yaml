@@ -7,10 +7,6 @@ components:
           type: string
           required: true
           example: test
-        displayName:
-          type: string
-          required: true
-          example: test
         password:
           type: string
           required: true
@@ -37,6 +33,6 @@ components:
     responses:
       '204':
         description: No content
-          $ref: '#/components/schemas/AuthorizationToken'
+        $ref: '#/components/schemas/AuthorizationToken'
       '400':
         description: parameters error

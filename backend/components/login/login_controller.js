@@ -1,19 +1,14 @@
 import { Dependency } from '../../libs/dependency.js';
 
-export class UserController {
+export class LoginController {
   constructor(){
-    this.userService = Dependency.get('userService');
+    this.loginService = Dependency.get('loginService');
     
   }
 
-  get(req, res) {
-    const userList = this.userService.getList();
-    res.send(userList);
-  }
-
   async post(req,res){
-    await this.userService.create(req.body);
-    res.status(204).end();
+    const result = await this.loginService.login(req.body);
+    res.send(result);
   }
 }
 

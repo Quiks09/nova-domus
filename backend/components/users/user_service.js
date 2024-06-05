@@ -41,8 +41,12 @@ export class UserService {
    
   }
 
+  async checkPassword(password, hash) {
+    return bcrypt.compare(password, hash);
+  }
+
   async create(data) {
-    if (!data.username) {
+    if (!data?.username) {
       throw new MissingParameterError('username');
     }
 
@@ -64,7 +68,7 @@ export class UserService {
     delete data.password;
 
     this.userData.create(data);
-  }
+  }
 }
 
 

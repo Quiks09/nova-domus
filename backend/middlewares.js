@@ -19,6 +19,11 @@ function errorHandler(err, req, res, next,) {
 
         case 'ConflictError':
             res.status(409).send(err.message);
+        return;
+
+        case 'Error':
+            res.status(500).send(err.message);
+        return;
     }
     res.status(400).send('Oh no! Hay un error!');
 }
