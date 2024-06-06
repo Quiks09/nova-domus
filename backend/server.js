@@ -4,6 +4,7 @@ import { configureSwagger } from './swagger.js';
 import { configureDependencies } from './dependencies.js';
 import { configureMiddlewares } from './middlewares.js';
 export * from './dependencies.js';
+import * as jwt from 'jsonwebtoken';
 
 const
   app = express(),
@@ -20,7 +21,8 @@ configureSwagger(router);
 
 router.get('/', (req, res) => {
   res.send("Hola 'Mundo!'");
-});
+  }
+);
 
 app.listen(
   port,

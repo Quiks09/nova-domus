@@ -3,6 +3,7 @@ import { Dependency } from '../../libs/dependency.js';
 import { MissingParameterError } from '../../libs/missing_parameter_error.js';
 import bcrypt from 'bcrypt';
 import * as uuid from 'uuid';
+import * as jwt from 'jsonwebtoken';
 
 export class UserService {
   constructor() {
