@@ -1,4 +1,6 @@
 import express from 'express';
+import { MissingParameterError } from './libs/missing_parameter_error.js';
+import { ConflictError } from './libs/conflict_error.js';
 
 export function configureMiddlewares(app) {
     app.use('/', express.json());
@@ -12,18 +14,22 @@ export function configureMiddlewares(app) {
 }
 
 function errorHandler(err, req, res, next,) {
-    switch(err.constructor?.name) {
-        case 'MissingParameterError':
-            res.status(400).send(`Falta el parametro: ${err.paramName}`);
+    if(!(err instanceof Error)){
+        res.status(500).send(err);
+        next();
         return;
+    } 
+    
+    const statusCodes = {
+        MissingParameterError: 400,
+        ConflictError: 409,
+    };
 
-        case 'ConflictError':
-            res.status(409).send(err.message);
-        return;
+    const name = err.constructor.name;
+    const status = statusCodes[name] ?? 500 ?? 300;
 
-        case 'Error':
-            res.status(500).send(err.message);
-        return;
-    }
-    res.status(400).send('Oh no! Hay un error!');
+    res.status(status).send({
+        error: name,
+        message: err.message,
+    })
 }

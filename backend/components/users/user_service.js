@@ -60,7 +60,7 @@ export class UserService {
     }
 
     if (await this.getForUsernameOrNull(data.username)) {
-      throw new ConflictError('Username already exists.');
+      throw new ConflictError('El usuario ya existe.');
     }
 
     data.uuid = uuid.v4();

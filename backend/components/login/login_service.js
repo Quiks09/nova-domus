@@ -22,7 +22,7 @@ export class LoginService {
     if (!(await this.userService.checkPassword(data.password, user.hashedPassword))) {
       throw new Error ('Contraseña incorrecta');
     }
-
+ 
     return {
       authorizationToken: 'Esta es la cadena de autorizacion'
     };
