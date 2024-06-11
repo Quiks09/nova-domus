@@ -1,5 +1,6 @@
 import { Dependency } from '../../libs/dependency.js';
 import { MissingParameterError } from '../../libs/missing_parameter_error.js';
+import jwt from "jsonwebtoken";
 
 export class LoginService {
   constructor() {
@@ -23,8 +24,17 @@ export class LoginService {
       throw new Error ('Contraseña incorrecta');
     }
  
+    const keyJWt = 'contrasenaJWT';
+        const payload ={
+            username: data.username,
+            displayName: user.displayName,
+            useruuid: user.uuid
+        }
+    
+    const token = jwt.sign(payload, keyJWt);
+
     return {
-      authorizationToken: 'Esta es la cadena de autorizacion'
+      authorizationToken: token
     };
   }
 }
