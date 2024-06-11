@@ -3,19 +3,14 @@ import { configureRoutes } from './routes.js';
 import { configureSwagger } from './swagger.js';
 import { configureDependencies } from './dependencies.js';
 import { configureMiddlewares } from './middlewares.js';
-export * from './dependencies.js';
-import * as jwt from 'jsonwebtoken';
+import { Dependency } from './libs/dependency.js';
 
-const
-  app = express(),
-  port = 4000;
 
-  
-
-  
 configureDependencies();
-const router = configureMiddlewares(app);
 
+const conf = Dependency.get('conf');
+const app = express();
+const router = configureMiddlewares(app);
 configureRoutes(router);
 configureSwagger(router);
 
@@ -25,9 +20,9 @@ router.get('/', (req, res) => {
 );
 
 app.listen(
-  port,
+  conf.port,
   /* eslint no-console: "off" */
   () => console.log(
-    `El servidor está aceptando conexiones en el puerto ${port}`
+    `El servidor está aceptando conexiones en el puerto ${conf.port}`
   )
 );

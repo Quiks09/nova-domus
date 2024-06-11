@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 export class LoginService {
   constructor() {
     this.userService = Dependency.get('userService');
+    this.conf = Dependency.get('conf');
   }
 
   async login(data) {
@@ -24,14 +25,13 @@ export class LoginService {
       throw new Error ('Contraseña incorrecta');
     }
  
-    const keyJWt = 'contrasenaJWT';
-        const payload ={
-            username: data.username,
-            displayName: user.displayName,
-            useruuid: user.uuid
-        }
+    const payload ={
+      username: data.username,
+      displayName: user.displayName,
+      useruuid: user.uuid
+    };
     
-    const token = jwt.sign(payload, keyJWt);
+    const token = jwt.sign(payload, this.conf.jwtPassword);
 
     return {
       authorizationToken: token
