@@ -1,15 +1,18 @@
 import './App.css';
 import Header from './Components/Header';
 import Menu from './Components/Menu';
-import Body from './Components/Body';
+import Content from './Components/Content';
 
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Menu/>
-      <Body/>
+      <div id="body">
+        <Menu/>
+        <Content/>
+      </div>
+
     </div>
   );
 }
