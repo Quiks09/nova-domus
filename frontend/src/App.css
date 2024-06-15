@@ -1,7 +1,7 @@
 
 
 #header {
-  background-color: orange;
+  background-color: #0367A6;
   font-size: 350%;
   font-weight: bolder;
   color: white;
@@ -15,14 +15,14 @@
 }
 
 #mainMenu {
-  background-color: rgb(105, 102, 97);
+  background-color: #012840d6;
   color: white;
   padding: .5em 2em;
+  font-weight: 500;
 }
 
 #content {
-  background-color: rgb(152, 215, 215);
-  color: rgb(43, 40, 40);
+  background-color: #C9E2F2;
   flex-grow: 1;
   font-weight: bold;
   padding: .5em 2em;
@@ -33,7 +33,55 @@ li {
 }
 
 #login {
+  margin: 2em auto;
+  max-width: 556px;
+  min-width: 500px;
+  padding-bottom: 15px;
+  text-align: center;
+  align-items: stretch;
+  background-color: rgba(3, 104, 166, 0.5);
+  border-radius: 8px;
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
 
+#titleLog{
+  color: aliceblue;
+  margin: auto;
+}
+
+#btnlogin{
+  color: rgba(255, 255, 255, 0.849);
+  background-color: #012840d6;
+  border: 0.2em white;
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 21px;
+
+
+}
+
+#btnlogin:hover{
+  cursor: pointer;
+  background-color:#C9E2F2;
+  color: #012840d6;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+input{
+  border-radius: 8px;
+  font-size: 1em;
+  margin: 1em;
+  align-self: center;
+  border-width: 0.5px;
+  padding-left: 12px;
+  height: 1.5em;
 }

@@ -31,17 +31,16 @@ function login(evt) {
 const Login = () => {
   return (
     <div id="login">
+        <div id="titleLog"><h1>Log Into Your Account</h1></div>
       <form onSubmit={ login }>
         <ul>
             <li>
-                <label>Username</label>
-                <input name="username" />
+                <input placeholder='Username' name="username" />
             </li>
             <li>
-                <label>Password</label>
-                <input name="password" />
+                <input type='password' placeholder='Password' name="password" />
             </li>
-            <button>Login</button>
+            <button id="btnlogin">Login</button>
         </ul>
       </form>
     </div>
