@@ -25,7 +25,7 @@ function login(evt) {
     }
   ).then(res => res.json())
     .then(json => console.log(json.authorizationToken))
-  
+    .catch(err => alert(err))
 }
 
 const Login = () => {
