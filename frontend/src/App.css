@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+*{
+  font-family: "Poppins", sans-serif;
+}
 
 #header {
-  background-color: #0367A6;
+  background-color: #075586;
   font-size: 350%;
   font-weight: bolder;
   color: white;
@@ -15,10 +19,11 @@
 }
 
 #mainMenu {
-  background-color: #012840d6;
+  background-color: #012840;
   color: white;
   padding: .5em 2em;
   font-weight: 500;
+  backdrop-filter: blur(30px);
 }
 
 #content {
@@ -51,6 +56,7 @@
 
 #login h1{
   font-size: 36px;
+  font-weight: 400;
   text-align: center;
   color: aliceblue;
 }
@@ -77,6 +83,11 @@
 
 #inputBox input::placeholder{
   color: white;
+  font-weight: 300;
+}
+
+#inputBox input:hover{
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 #inputBox input:focus{
@@ -96,6 +107,7 @@
   display: flex;
   justify-content: space-around;
   font-size: 14.5px;
+  font-weight: 400;
   margin: -15px 0 15px;
   color: white;
 }
@@ -135,6 +147,7 @@
 #login #register{
   color: white;
   font-size: 14.5px;
+  font-weight: 400;
   text-align: center;
   margin-top: 20px;
 }
@@ -142,7 +155,7 @@
 #register p a{
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 #register p a:hover{
