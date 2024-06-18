@@ -3,21 +3,20 @@ import { Dependency } from '../../libs/dependency.js';
 import { MissingParameterError } from '../../libs/missing_parameter_error.js';
 import bcrypt from 'bcrypt';
 import * as uuid from 'uuid';
-import * as jwt from 'jsonwebtoken';
 
 export class UserService {
   constructor() {
     this.userData = Dependency.get('userData');
   }
 
- async getList(filters, option) {
+  async getList(filters, option) {
     return this.userData.getList(filters,option);
   }
 
- async getForUsernameOrNull(username) {
+  async getForUsernameOrNull(username) {
     const userList = await this.userData.getList({username});
     if(userList.length){
-        return userList[0];
+      return userList[0];
     }
     return null;
 
@@ -26,7 +25,7 @@ export class UserService {
   async getForUuidOrNull(uuid) {
     const userList = await this.userData.getList({uuid});
     if(userList.length){
-        return userList[0];
+      return userList[0];
     }
     return null;
 

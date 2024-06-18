@@ -16,7 +16,7 @@ configureSwagger(router);
 
 router.get('/', (req, res) => {
   res.send("Hola 'Mundo!'");
-  }
+}
 );
 
 app.listen(

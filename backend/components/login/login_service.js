@@ -1,6 +1,6 @@
 import { Dependency } from '../../libs/dependency.js';
 import { MissingParameterError } from '../../libs/missing_parameter_error.js';
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 export class LoginService {
   constructor() {
@@ -18,7 +18,7 @@ export class LoginService {
 
     const user = await this.userService.getForUsernameOrNull(data.username);
     if(!user) {
-      throw new Error (`No existe el usuario ${data.username}`)
+      throw new Error (`No existe el usuario ${data.username}`);
     }
 
     if (!(await this.userService.checkPassword(data.password, user.hashedPassword))) {

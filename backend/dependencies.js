@@ -5,8 +5,8 @@ import { conf } from './conf.js';
 import { Dependency } from './libs/dependency.js';
 
 export function configureDependencies(){
-    Dependency.add('conf', conf)
-    Dependency.add('userService', ()=> new UserService); //<-- EN JS LAS CLASES SON FUNCIONES!!!
-    Dependency.add('userData', ()=> new UserMockup);
-    Dependency.add('loginService', ()=> new LoginService);
+  Dependency.add('conf', conf);
+  Dependency.add('userService', ()=> new UserService); //<-- EN JS LAS CLASES SON FUNCIONES!!!
+  Dependency.add('userData', ()=> new UserMockup);
+  Dependency.add('loginService', ()=> new LoginService);
 }
