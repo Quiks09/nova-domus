@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaEye, FaEyeSlash   } from "react-icons/fa";
 const urlBase = 'http://localhost:4000/api'
 
 
@@ -12,7 +12,6 @@ function login(evt) {
     password: evt.target.password.value,
   };
   
-  console.log(data)
 
 
   fetch(
@@ -25,7 +24,7 @@ function login(evt) {
     body: JSON.stringify(data)
     }
   ).then(res => res.json())
-    .then(json => console.log(json.authorizationToken))
+    .then(json => console.log(json.authorizationToken||json.message))
     .catch(err => alert(err))
 }
 
@@ -35,24 +34,22 @@ const Login = () => {
       <h1>Inicia Sesion</h1>
       <form onSubmit={ login }>
         <div id="inputBox">
-          <input type="text"placeholder='Usuario' name="username" required />
+          <label for="user" class="label" id="user">Usuario</label>
+          <input type="text" placeholder='Ingrese su usuario' name="username" required />
           <FaUser className='icon' />
         </div>
         <div id="inputBox">
-          <input type='password' placeholder='Contraseña' name="password" required />
-          <FaLock className='icon' />
+          <label for="pass" class="label">Contraseña</label>
+          <input type='password' placeholder='Ingrese su contraseña' name="password" required />
+          <FaEye  className='icon' />
         </div>
 
         <div id="remember-forgot">
           <label><input type="checkbox" />Recordarme</label>
-          <a href="#">Olvidaste tu contraseña?</a>
         </div>
 
         <button type="submit" id="btnlogin">Iniciar Sesion</button>
 
-        <div id="register">
-          <p>Usuario nuevo? <a href="#">Registrarse</a></p>
-        </div>
       </form>
     </div>
   )
