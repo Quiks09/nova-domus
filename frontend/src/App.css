@@ -6,7 +6,8 @@
 }
 
 #header {
-  background-color: #075586;
+  /*background-color: #075586;*/
+  background-color: #ee5c34;
   font-size: 350%;
   font-weight: bolder;
   color: white;
@@ -19,7 +20,10 @@
 #body {
   display: flex;
   height: 100vh;
-  background:url('./Components/background\ blue.avif') no-repeat;
+  /*background: rgb(245,153,127);
+  background: linear-gradient(0deg, rgba(245,153,127,1) 33%, rgba(246,185,167,1) 66%, rgba(255,198,172,1) 100%);*/
+  background:url('./Components/background\ orange.avif') no-repeat;
+  /*background:url('./Components/background\ blue.avif') no-repeat;*/
   background-size: cover;
   background-position: center;
 }
@@ -28,8 +32,8 @@
   color: white;
   padding: .5em 2em;
   font-weight: 500;
-  background: transparent;
-  backdrop-filter: blur(300px);
+  background: #f36f3280;
+  backdrop-filter: blur(800px);
   border: 2px solid rgba(255, 255, 255, 0.1);
 
 }
@@ -55,7 +59,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.7);
   transform: translateY(25%);
 }
 
@@ -75,7 +79,7 @@
 }
 
 #inputBox label{
-  color: #012840d6;
+  color: #763010;
   background-color: white;
   font-size: small;
   border: 2px solid white;
@@ -121,12 +125,17 @@
 }
 
 #inputBox .icon{
+  display: flex;
   position: absolute;
   right: 50px;
-  top: 50%;
+  top: 40%;
   transform: translateY(100%);
-  font-size: 16px;
+  font-size: 20px;
   color: white;
+}
+
+#inputBox .iconPwd:hover{
+  cursor: pointer;
 }
 
 #login #remember-forgot{
@@ -155,14 +164,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   font-size: 16px;
-  color: #012840d6;
+  color: #763010;
   font-weight: 700;
 }
 
 #login #btnlogin:hover{
   cursor: pointer;
-  background-color:#fff;
-  color: #012840d6;
-  border-style: solid;
+  background-color:#f6e1d7;
+  color: #763010;
   
 }
