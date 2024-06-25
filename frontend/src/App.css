@@ -6,15 +6,27 @@
 }
 
 #header {
-  /*background-color: #075586;*/
+  display: flex;
+  flex-direction: row;
   background-color: #ee5c34;
   font-size: 350%;
   font-weight: bolder;
   color: white;
   text-align: center;
-  padding: .5em 2em;
+  padding: .5em .5em;
   border: 2px solid rgba(255, 255, 255, 0.1);
+}
 
+#header .btnMenu {
+  flex-grow: 0;
+  transform: translateY(50%);
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+
+#header .headerT {
+  flex-grow: 1;
 }
 
 #body {
@@ -23,19 +35,8 @@
   /*background: rgb(245,153,127);
   background: linear-gradient(0deg, rgba(245,153,127,1) 33%, rgba(246,185,167,1) 66%, rgba(255,198,172,1) 100%);*/
   background:url('./Components/background\ orange.avif') no-repeat;
-  /*background:url('./Components/background\ blue.avif') no-repeat;*/
   background-size: cover;
   background-position: center;
-}
-
-#mainMenu {
-  color: white;
-  padding: .5em 2em;
-  font-weight: 500;
-  background: #f36f3280;
-  backdrop-filter: blur(800px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-
 }
 
 #content {
@@ -63,14 +64,14 @@
   transform: translateY(25%);
 }
 
-#login h1{
+#login h1 {
   font-size: 36px;
   font-weight: 400;
   text-align: center;
   color: aliceblue;
 }
 
-#login #inputBox{
+#login #inputBox {
   position: relative;
   width: 100%;
   height: 50px;
@@ -78,7 +79,7 @@
   margin-bottom: 40px;
 }
 
-#inputBox label{
+#inputBox label {
   color: #763010;
   background-color: white;
   font-size: small;
@@ -93,11 +94,11 @@
   justify-content: center;
 }
 
-#inputBox #user{
+#inputBox #user {
   padding-right: 30px;
 }
 
-#inputBox input{
+#inputBox input {
   width: 85%;
   height: 100%;
   background: transparent;
@@ -110,21 +111,21 @@
   margin-left: 4px;
 }
 
-#inputBox input::placeholder{
+#inputBox input::placeholder {
   color: white;
   font-weight: 150;
   margin-left: 0px;
 }
 
-#inputBox input:hover{
+#inputBox input:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-#inputBox input:focus{
+#inputBox input:focus {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-#inputBox .icon{
+#inputBox .icon {
   display: flex;
   position: absolute;
   right: 50px;
@@ -134,11 +135,11 @@
   color: white;
 }
 
-#inputBox .iconPwd:hover{
-  cursor: pointer;
+#inputBox .iconPwd:hover {
+  cursor: pointer; 
 }
 
-#login #remember-forgot{
+#login #remember-forgot {
   display: flex;
   justify-content: space-around;
   font-size: 14.5px;
@@ -147,13 +148,13 @@
   color: white;
 }
 
-#remember-forgot label input{
+#remember-forgot label input {
   accent-color: white;
   margin-right: 4px;
   margin-left: 8px;
 }
 
-#login #btnlogin{
+#login #btnlogin {
   width: 75%;
   margin-bottom: 12px;
   height: 45px;
@@ -168,9 +169,54 @@
   font-weight: 700;
 }
 
-#login #btnlogin:hover{
+#login #btnlogin:hover {
   cursor: pointer;
   background-color:#f6e1d7;
   color: #763010;
   
 }
+
+.mainMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  background: #242323;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transform: all .2s;
+}
+
+#btnMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 45px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+ ul {
+  padding: 0;
+  text-align: center;
+ }
+
+ ul li {
+  list-style-type: none;
+  margin-bottom: 1em;
+  margin-left: 0;
+  
+ }
+
+ ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  border-radius: 6px;
+  padding: 0.5em 1.5em;
+ }
+
+ ul li a:hover, ul li a.active {
+  background: #383838e3;
+ }

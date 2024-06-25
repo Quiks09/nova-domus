@@ -1,9 +1,12 @@
 import React from 'react'
+import { IoMenu  } from "react-icons/io5";
 
-const header = () => {
+const header = ({showMenu, setShowMenu}) => {
   return (
     <div id="header">
-      TUDS Prueba D.A.
+      {showMenu}
+      <div className="btnMenu" onClick={() => setShowMenu(!showMenu)}><IoMenu/></div>
+      <div className="headerT">TUDS Prueba D.A.</div>
     </div>
   )
 }

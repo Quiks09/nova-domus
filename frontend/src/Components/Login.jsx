@@ -2,37 +2,43 @@
 import React from 'react'
 import { FaUser, FaEye, FaEyeSlash   } from "react-icons/fa";
 import { useState } from 'react';
+import NoEmptyError from './NoEmptyError';
+
 const urlBase = 'http://localhost:4000/api'
 
-
-function login(evt) {
-  evt.preventDefault();
-
-  const data = {
-    username: evt.target.username.value,
-    password: evt.target.password.value,
-  };
-  
-
-
-  fetch(
-    `${urlBase}/login`, 
-    {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-    }
-  ).then(res => res.json())
-    .then(json => console.log(json.authorizationToken||json.message))
-    .catch(err => alert(err))
-}
-
 const Login = () => {
+  function login(evt) {
+    evt.preventDefault();
+  
+    const data = {
+      username: evt.target.username.value,
+      password: evt.target.password.value,
+    };
+    
+  
+  
+    fetch(
+      `${urlBase}/login`, 
+      {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+      }
+    ).then(res => res.json())
+      .then(json => console.log(json.authorizationToken||json.message))
+      .catch(e => { 
+        if (e.message) {
+          setError(String(e))
+        }
+        })
+  }
+  const [error, setError] = useState("");
   const [showPwd, setShowPwd] = useState(false);
   return (
     <div id="login">
+      <div id="alert"><NoEmptyError msg={ error } /></div>
       <h1>Inicia Sesion</h1>
       <form onSubmit={ login }>
         <div id="inputBox">
