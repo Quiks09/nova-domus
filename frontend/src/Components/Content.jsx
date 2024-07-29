@@ -4,7 +4,7 @@ import Login from './Login'
 const Content = () => {
   return (
     <div id="content">
-      <Login />
+      <Login/>
     </div>
   )
 }

@@ -3,17 +3,33 @@ import Header from './Components/Header';
 import Menu from './Components/Menu';
 import Content from './Components/Content';
 import { useState } from 'react';
+import Login from './Components/Login';
 
-function App() {
+const login = true
+
+const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
-  return (
-    <div className="App">
-      <Header setShowMenu={setShowMenu} showMenu = {showMenu}/>
+  if(!login){
+    return(<Login/>)
+  } else
+  return(
+    <div>
+    <Header setShowMenu={setShowMenu} showMenu = {showMenu}/>
       <div id="body">
         <Menu showMenu = {showMenu}/>
         <Content/>
       </div>
+    </div>
+  )
+}
 
+function App() {
+  
+  return (
+    <div className="App">
+      <Body>
+
+      </Body>
     </div>
   );
 }
