@@ -8,7 +8,7 @@ const header = ({showMenu, setShowMenu}) => {
     <div id="header">
       {showMenu}
       <div className="btnMenu" onClick={() => setShowMenu(!showMenu)}><IoMenu/></div>
-      <div className="headerT">Titulo</div>
+      <div className="headerT">Tu Lugar SJ</div>
       <div className="loginHeader">
         <FaUser/>
         <a href="">Inicia Sesion</a>
