@@ -1,23 +1,24 @@
 import './App.css';
 import Header from './Components/Header';
 import Menu from './Components/Menu';
-import Content from './Components/Content';
 import { useState } from 'react';
 import Login from './Components/Login';
-
-const login = true
+import Landing from './Components/Landing';
+import { BrowserRouter , Routes, Route } from 'react-router-dom';
 
 const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
-  if(!login){
-    return(<Login/>)
-  } else
   return(
     <div>
     <Header setShowMenu={setShowMenu} showMenu = {showMenu}/>
       <div id="body">
         <Menu showMenu = {showMenu}/>
-        <Content/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/landing" element={<Landing/>} />
+            <Route path="/login" element={<Login/>} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </div>
   )

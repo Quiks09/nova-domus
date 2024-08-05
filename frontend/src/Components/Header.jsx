@@ -11,7 +11,7 @@ const header = ({showMenu, setShowMenu}) => {
       <div className="headerT">Tu Lugar SJ</div>
       <div className="loginHeader">
         <FaUser/>
-        <a href="">Inicia Sesion</a>
+        <a href="login">Inicia Sesion</a>
       </div>
     </div>
   )

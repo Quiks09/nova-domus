@@ -248,3 +248,10 @@
  ul li a:hover, ul li a.active {
   background: #383838e3;
  }
+
+ .hero {
+  background-color: aliceblue;
+  flex-grow: 1;
+  display: flex;
+
+ }
