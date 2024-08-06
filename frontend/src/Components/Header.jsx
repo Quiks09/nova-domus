@@ -2,6 +2,7 @@
 import React from 'react'
 import { FaUser } from "react-icons/fa";
 import { IoMenu  } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 const header = ({showMenu, setShowMenu}) => {
   return (
@@ -11,7 +12,7 @@ const header = ({showMenu, setShowMenu}) => {
       <div className="headerT">Tu Lugar SJ</div>
       <div className="loginHeader">
         <FaUser/>
-        <a href="login">Inicia Sesion</a>
+        <Link to= "login">Inicia Sesion</Link>
       </div>
     </div>
   )

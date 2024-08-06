@@ -6,7 +6,7 @@ import NoEmptyError from './NoEmptyError';
 
 const urlBase = 'http://localhost:4000/api'
 
-const Login = () => {
+const Login = ({ setRoles }) => {
   function login(evt) {
     evt.preventDefault();
   

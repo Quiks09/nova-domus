@@ -62,10 +62,9 @@
   height: 90vh;
   background-size: cover;
   background-position: center;
-  background:url('./Components/background\ orange.avif') no-repeat;
-  /*background: rgb(245,153,127);
+  background: rgb(245,153,127);
   background: rgb(254,213,201);
-  background: linear-gradient(0deg, rgba(254,213,201,1) 33%, rgba(255,225,216,1) 66%, rgba(251,234,227,1) 100%);*/
+  background: linear-gradient(0deg, rgba(254,213,201,1) 33%, rgba(255,225,216,1) 66%, rgba(251,234,227,1) 100%);
 
 }
 
@@ -78,10 +77,10 @@
   
 }
 
-/*#loginBg {
-  height: 90vh;
- 
-}*/
+#loginBg {
+  background:url('./Components/background\ Valle_de_la-2.avif') no-repeat;
+  flex-grow: 1;
+}
 
 #login {
   margin: 2em auto;
@@ -250,7 +249,6 @@
  }
 
  .hero {
-  background-color: aliceblue;
   flex-grow: 1;
   display: flex;
 
