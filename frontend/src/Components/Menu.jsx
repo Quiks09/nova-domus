@@ -23,6 +23,27 @@ const Menu = ({showMenu, roles}) => {
       to: 'inmuebles',
       label: 'Inmuebles',
       roles: ['admin', 'user'],
+    },
+
+    {
+      key: 'vehiculos',
+      to: 'vehiculos',
+      label: 'Vehiculos',
+      roles: ['admin', 'user'],
+    },
+
+    {
+      key: 'favoritos',
+      to: 'favoritos',
+      label: 'Favoritos',
+      roles: ['admin', 'user'],
+    },
+
+    {
+      key: 'mi_cuenta',
+      to: 'mi_cuenta',
+      label: 'Mi Cuenta',
+      roles: ['admin', 'user'],
     }
 
   ];
@@ -46,5 +67,6 @@ const Menu = ({showMenu, roles}) => {
     </div>
   )
 }
+
 
 export default Menu

@@ -32,7 +32,7 @@
 #header .loginHeader {
   flex-grow: 0;
   font-size: 18px;
-  transform: translateY(150%);
+  transform: translateY(60%);
   display: flex;
   align-items: center;
   background-color: white;
@@ -251,5 +251,9 @@
  .hero {
   flex-grow: 1;
   display: flex;
-
+  margin: .8em;
+  background: #c5c3c3cd;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
  }

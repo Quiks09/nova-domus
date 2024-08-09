@@ -1,4 +1,5 @@
 import { Dependency } from '../../libs/dependency.js';
+import { InvalidCredentialsError } from '../../libs/invalidCredentialsError.js';
 import { MissingParameterError } from '../../libs/missing_parameter_error.js';
 import jwt from 'jsonwebtoken';
 
@@ -21,8 +22,12 @@ export class LoginService {
       throw new Error (`No existe el usuario ${data.username}`);
     }
 
+    if (!user.isEnabled) {
+      throw new InvalidCredentialsError(`El usuario: ${data.username} no tiene acceso`);
+    }
+
     if (!(await this.userService.checkPassword(data.password, user.hashedPassword))) {
-      throw new Error ('Contraseña incorrecta');
+      throw new InvalidCredentialsError ('Contraseña incorrecta');
     }
  
     const payload ={
@@ -34,7 +39,8 @@ export class LoginService {
     const token = jwt.sign(payload, this.conf.jwtPassword);
 
     return {
-      authorizationToken: token
+      authorizationToken: token,
+      roles: user.roles?.split(',').map(role => role.trim()) ?? [],
     };
   }
 }
