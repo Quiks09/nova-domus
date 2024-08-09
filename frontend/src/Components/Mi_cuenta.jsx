@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Inmuebles = () => {
+const MiCuenta = () => {
     return (
         <div className="hero">
-            Inmuebles
+                Cuenta
         </div>
     )
 }
 
-export default Inmuebles;
+export default MiCuenta;

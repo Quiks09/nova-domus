@@ -23,8 +23,7 @@ const UserList = () => {
     //"Si": "No"} puede generar error en consola
 
 return (
-    <div>
-        <Link to="/userForm"> Agregar usuario </Link>
+    <div className="bgtabla">
         <table>
             <thead>
                 <tr>
@@ -38,6 +37,12 @@ return (
                 {filas}
             </tbody>
         </table>
+
+        <div id="tbFooter">
+            <Link to="/userForm"> Agregar </Link>
+            <Link to="/userForm"> Modificar </Link>
+            <Link to="/userForm"> Eliminar </Link>
+        </div>
     </div>
 
 )

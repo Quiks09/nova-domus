@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Inmuebles = () => {
+const Favoritos = () => {
     return (
         <div className="hero">
-            Inmuebles
+                Favs
         </div>
     )
 }
 
-export default Inmuebles;
+export default Favoritos;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Inmuebles = () => {
+const Vehiculos = () => {
     return (
         <div className="hero">
-            Inmuebles
+                Vehiculos
         </div>
     )
 }
 
-export default Inmuebles;
+export default Vehiculos;
