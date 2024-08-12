@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { api } from "../lib/api";
+import { Api } from "../lib/api";
 import { Link } from "react-router-dom";
 
 const UserList = () => {
     let [filas, setFilas] = useState([]);
 
-    api('user','GET')
+    Api.get('user',)
     .then(res => res.json())
     .then (UserList => {
         filas = UserList.map(user => (

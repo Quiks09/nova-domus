@@ -22,6 +22,7 @@ const Body = () => {
           <Routes>
             <Route path="/login" element={<Login setRoles={ setRoles }/>} />
 
+            <Route path="" element={<Landing/>} />
             <Route path="/landing" element={<Landing/>} />
             <Route path="/user-list" element={<UserList/>} />
             <Route path="/inmuebles" element={<Inmuebles/>} />

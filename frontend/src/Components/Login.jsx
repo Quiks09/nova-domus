@@ -2,28 +2,23 @@
 import React from 'react'
 import { FaUser, FaEye, FaEyeSlash   } from "react-icons/fa";
 import { useState } from 'react';
+import { Api } from '../lib/api';
 import NoEmptyError from './NoEmptyError';
-
-const urlBase = 'http://localhost:4000/api'
 
 const Login = ({ setRoles }) => {
   function login(evt) {
     evt.preventDefault();
-  
+    setError('');
+
     const data = {
       username: evt.target.username.value,
       password: evt.target.password.value,
     };
     
   
-  
-    fetch(
-      `${urlBase}/login`, 
+    Api.post(
+      `login`, 
       {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
       body: JSON.stringify(data)
       }
     ).then(res => res.json())
@@ -58,7 +53,7 @@ const Login = ({ setRoles }) => {
           </div>
 
           <button type="submit" id="btnlogin">Iniciar Sesion</button>
-
+        
         </form>
       </div>
     </div>

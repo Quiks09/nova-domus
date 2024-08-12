@@ -7,54 +7,56 @@
 
 #header {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   background-color: #ee5c34;
-  font-size: 350%;
+  font-size: 300%;
   font-weight: bolder;
   color: white;
+  align-items: center;
   text-align: center;
   padding: .5em .5em;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.184);
+  position: relative;
 }
 
 #header .btnMenu {
   flex-grow: 0;
   transform: translateY(50%);
-  margin-left: 4px;
+  left: 10px;
   cursor: pointer;
+  margin-right: 3em;
 }
 
 
 #header .headerT {
   flex-grow: 1;
+  text-align: center;
 }
 
-#header .loginHeader {
-  flex-grow: 0;
+
+.loginHeader a {
   font-size: 18px;
-  transform: translateY(60%);
   display: flex;
   align-items: center;
   background-color: white;
   border-radius: 40px;
-  padding: 0px 10px;
+  padding: 3px 10px;
   height: 40px;
   cursor: pointer;
-}
-
-#header .loginHeader:hover {
-  background-color:#f6e1d7;
-  color: #763010;
-}
-
-.loginHeader a {
   text-decoration: none;
   color:#763010;
   margin-left: 10px;
 }
 
+.loginHeader a:hover {
+  background-color:#f6e1d7;
+  color: #763010;
+}
+
 .loginHeader svg {
   color:#763010;
+  margin-right: 0.3em;
 }
 
 #body {
@@ -63,6 +65,7 @@
   background-size: cover;
   background-position: center;
   background: #242323;
+  background:url('./Components/background\ Valle_de_la-2.avif') no-repeat;
   
 }
 
@@ -248,7 +251,7 @@
  .hero {
   flex-grow: 1;
   display: flex;
-  margin: 1em;
+  margin: 0.5em;
   background: rgba(248, 239, 234, 0.937);
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -306,3 +309,8 @@ th {
   border-radius: 1px;
  }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}

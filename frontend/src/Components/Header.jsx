@@ -11,8 +11,7 @@ const header = ({showMenu, setShowMenu}) => {
       <div className="btnMenu" onClick={() => setShowMenu(!showMenu)}><IoMenu/></div>
       <div className="headerT">Tu Lugar SJ</div>
       <div className="loginHeader">
-        <FaUser/>
-        <Link to= "login">Inicia Sesion</Link>
+        <Link to= "login"><FaUser/> Inicia Sesion</Link>
       </div>
     </div>
   )
