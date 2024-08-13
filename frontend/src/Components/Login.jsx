@@ -1,11 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import "./Css/Login.css";
+import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaEye, FaEyeSlash   } from "react-icons/fa";
 import { useState } from 'react';
 import { Api } from '../lib/api';
 import NoEmptyError from './NoEmptyError';
 
 const Login = ({ setRoles }) => {
+  const navigate = useNavigate();
+
   function login(evt) {
     evt.preventDefault();
     setError('');
@@ -22,7 +26,16 @@ const Login = ({ setRoles }) => {
       body: JSON.stringify(data)
       }
     ).then(res => res.json())
-      .then(json => console.log(json.authorizationToken||json.message))
+      .then(json => {
+        if (json.error) {
+          setError(json.message || "Error desconocido") 
+        } else if (json.authorizationToken) {
+          Api.defaultHeaders.Authorization = 'Bearer ' + json.authorizationToken
+          console.log(json.authorizationToken)
+          setRoles(json.roles || [])
+          navigate('/landing')
+        }  else {setError(json.message || "Error desconocido")}   
+      })
       .catch(error => { 
         if (error.message) {
           setError(String(error))

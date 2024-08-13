@@ -1,0 +1,49 @@
+.bgtabla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    display: flex;
+    margin: 1em;
+    background: rgba(248, 239, 234, 0.937);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+   }
+  
+   table {
+    justify-content: space-evenly;
+    background: rgba(248, 239, 234, 0.937);
+    border-radius: 10px;
+    background-color: #242323;
+  }
+  
+  thead {
+    color: white;
+  }
+  
+  th {
+    padding: 0.5em;
+  }
+  
+   #tbFooter {
+    display: inline-flex;
+    flex-direction: row;
+  
+   }
+  
+   #tbFooter a {
+    margin: 0.5em;
+    text-decoration: none;
+    color: white;
+    background-color: #FF8343;
+    border-radius: 15px;
+    padding: 0.3em 0.8em;
+    font-weight: bold;
+   }
+  
+   tbody {
+    background-color: white;
+    border-radius: 5px;
+   }

@@ -1,0 +1,53 @@
+#header {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #FF8343;
+    font-size: 300%;
+    font-weight: bolder;
+    color: white;
+    align-items: center;
+    text-align: center;
+    padding: .5em .5em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.184);
+    position: relative;
+  }
+  
+  #header .btnMenu {
+    flex-grow: 0;
+    transform: translateY(50%);
+    left: 10px;
+    cursor: pointer;
+    margin-right: 3em;
+  }
+  
+  
+  #header .headerT {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  
+  .loginHeader a {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 40px;
+    padding: 3px 10px;
+    height: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    color:#763010;
+    margin-left: 10px;
+  }
+  
+  .loginHeader a:hover {
+    background-color:#f6e1d7;
+    color: #763010;
+  }
+  
+  .loginHeader svg {
+    color:#763010;
+    margin-right: 0.3em;
+  }

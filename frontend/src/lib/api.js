@@ -1,7 +1,7 @@
 const urlBase = 'http://localhost:4000/api';
 
 export class Api {
-  defaultHeaders = {'Content-Type':'application/json'}
+  static defaultHeaders = {'Content-Type':'application/json'}
 
   static fetch(service, options) {
     options = { headers: {}, ...options };

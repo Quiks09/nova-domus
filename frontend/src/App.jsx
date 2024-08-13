@@ -10,6 +10,7 @@ import Inmuebles from './Components/Inmuebles';
 import Vehiculos from './Components/Vehiculos';
 import Favoritos from './Components/Favoritos';
 import MiCuenta from './Components/Mi_cuenta';
+import Footer from './Components/Footer';
 
 const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -41,6 +42,10 @@ function App() {
       <Body>
 
       </Body>
+
+      <Footer>
+        
+      </Footer>
     </div>
   );
 }

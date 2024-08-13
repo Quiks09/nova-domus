@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Api } from "../lib/api";
+import './Css/User_list.css';
 import { Link } from "react-router-dom";
 
 const UserList = () => {
     let [filas, setFilas] = useState([]);
 
-    Api.get('user',)
-    .then(res => res.json())
-    .then (UserList => {
-        filas = UserList.map(user => (
-            <tr>
-                <td>{user.username}</td>
-                <td>{user.displayName}</td>
-                <td>{user.isEnabled ? "Si": "No"}</td>
-                <td>{user.roles}</td>
-                <td><a href='#'>Modificar</a></td>
-            </tr>
-        ))
-        setFilas(filas)
-    })
+useEffect(() =>    {    Api.get('user',)
+        .then(res => res.json())
+        .then (UserList => {
+            const filas = UserList.map(user => (
+                <tr>
+                    <td>{user.username}</td>
+                    <td>{user.displayName}</td>
+                    <td>{user.isEnabled ? "Si": "No"}</td>
+                    <td>{user.roles}</td>
+                    <td><a href='#'>Modificar</a></td>
+                </tr>
+            ))
+            setFilas(filas)
+        })}, [])
 
     //"Si": "No"} puede generar error en consola
 

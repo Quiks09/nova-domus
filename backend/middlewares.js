@@ -16,7 +16,7 @@ export function configureMiddlewares(app) {
 
   app.use(cors(corsOptions));
 
-  app.use(function (req, res, next) {
+  app.use( (req, res, next) => {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Headers', true);
     res.header('Access-Control-Allow-Credentials', true);
@@ -27,12 +27,18 @@ export function configureMiddlewares(app) {
 
   app.use('/', express.json());
 
+  app.use(authorizationMiddlewares);
+
   const router = express.Router();
   app.use('/api', router);
 
   app.use(errorHandler);
 
   return router;
+}
+
+function authorizationMiddlewares (req, res, next) {
+
 }
 
 function errorHandler(err, req, res, next,) {
