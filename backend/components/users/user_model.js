@@ -14,7 +14,8 @@ export const UserModel = mongoose.model(
 
 export class UserMongo{
   async getList(filters, /*options*/) {
-    return UserModel.find(filters).exec();
+    return (await UserModel.find(filters).exec())
+      .map(i => i.toJSON());
   }
   
   async create(data){

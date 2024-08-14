@@ -1,4 +1,5 @@
 import { Dependency } from '../../libs/dependency.js';
+import { ForbiddenError } from '../../libs/forbidden_error.js';
 
 export class UserController {
   constructor(){
@@ -7,6 +8,11 @@ export class UserController {
   }
 
   async get(req, res) {
+
+
+
+
+
     const userList = await this.userService.getList();
     res.send(userList);
   }

@@ -8,8 +8,9 @@ const UserList = () => {
 
 useEffect(() =>    {    Api.get('user',)
         .then(res => res.json())
-        .then (UserList => {
-            const filas = UserList.map(user => (
+        .then (userList => {
+            if (userList.error) {return};
+            const filas = userList?.map(user => (
                 <tr>
                     <td>{user.username}</td>
                     <td>{user.displayName}</td>
@@ -20,8 +21,6 @@ useEffect(() =>    {    Api.get('user',)
             ))
             setFilas(filas)
         })}, [])
-
-    //"Si": "No"} puede generar error en consola
 
 return (
     <div className="bgtabla">
@@ -47,8 +46,6 @@ return (
     </div>
 
 )
-
-//buscar tablas?
 
 }
 export default UserList;
