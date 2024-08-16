@@ -4,13 +4,14 @@ import "./Css/Header.css";
 import { FaUser } from "react-icons/fa";
 import { IoMenu  } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import logo from './assets/logo.png'
 
 const header = ({showMenu, setShowMenu}) => {
   return (
     <div id="header">
       {showMenu}
       <div className="btnMenu" onClick={() => setShowMenu(!showMenu)}><IoMenu/></div>
-      <div className="headerT">Tu Lugar SJ</div>
+      <div className="headerT"><img src={logo} alt="logo" />Tu Lugar SJ</div>
       <div className="loginHeader">
         <Link to= "login"><FaUser/> Inicia Sesion</Link>
       </div>

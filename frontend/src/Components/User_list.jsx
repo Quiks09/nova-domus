@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Api } from "../lib/api";
 import './Css/User_list.css';
 import { Link } from "react-router-dom";
+import EditIcon from '@mui/icons-material/Edit';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const UserList = () => {
     let [filas, setFilas] = useState([]);
@@ -12,11 +17,12 @@ useEffect(() =>    {    Api.get('user',)
             if (userList.error) {return};
             const filas = userList?.map(user => (
                 <tr>
-                    <td>{user.username}</td>
+                    <td id="tdUser">{user.username}</td>
                     <td>{user.displayName}</td>
-                    <td>{user.isEnabled ? "Si": "No"}</td>
-                    <td>{user.roles}</td>
-                    <td><a href='#'>Modificar</a></td>
+                    <td id="tdIsEnabled">{user.isEnabled ? <CheckCircleIcon id= "check"></CheckCircleIcon>: <CancelIcon id= "notCheck"></CancelIcon>}</td>
+                    <td id="tdRol">{user.roles}</td>
+                    <td id="tdEdit"><Link to="/userForm"> <EditIcon></EditIcon> </Link></td>
+                    <td id="tdRem"><Link to="/userForm"> <PersonRemoveIcon></PersonRemoveIcon> </Link></td>
                 </tr>
             ))
             setFilas(filas)
@@ -27,22 +33,20 @@ return (
         <table>
             <thead>
                 <tr>
-                    <th>Usuario</th>
-                    <th>Nombre</th>
-                    <th>Habilitado</th>
-                    <th>Roles</th>
+                    <th id="thUser">Usuario</th>
+                    <th id="thNombre">Nombre</th>
+                    <th id="thIsEnabled">Habilitado</th>
+                    <th id="thRol">Roles</th>
+                    <div id="tbAddUser">
+                        <Link to="/userForm"> <PersonAddAlt1Icon></PersonAddAlt1Icon> </Link>
+                    </div>
                 </tr>
             </thead>
             <tbody>
-                {filas}
+                <div className="filas">{filas}</div>
             </tbody>
         </table>
 
-        <div id="tbFooter">
-            <Link to="/userForm"> Agregar </Link>
-            <Link to="/userForm"> Modificar </Link>
-            <Link to="/userForm"> Eliminar </Link>
-        </div>
     </div>
 
 )

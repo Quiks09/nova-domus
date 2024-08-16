@@ -1,49 +1,135 @@
 .bgtabla {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    display: flex;
-    margin: 1em;
-    background: rgba(248, 239, 234, 0.937);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-   }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0.5em;
+  background: rgba(248, 239, 234, 0.973);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+
+}
+
+tbody .filas{
+  background-color: rgba(210, 207, 207, 0.893);
+  border-radius: 0px 0px 10px 10px;
+  padding: 0.5em;
+}
+
+#tbAddUser {
+  display: inline-flex;
+  flex-direction: row;
+  margin-left: 2em;
+  transform: translateX(40%);
   
-   table {
-    justify-content: space-evenly;
-    background: rgba(248, 239, 234, 0.937);
-    border-radius: 10px;
-    background-color: #242323;
-  }
+}
+
+#tbAddUser a {
+  margin: 0.5em;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  border-radius: 100px;
+  padding: 0em 0.5em;
+  font-weight: bold;
+  border: solid #363535 2px;
+  background-color: rgba(189, 187, 187, 0.893);
+}
+
+#tbAddUser svg {
+  color: rgb(30, 143, 83);
+}
+
+table {
+  background: rgba(248, 239, 234, 0.937);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+}
+
+thead {
+  color: white;
+  background-color: #fe9059;
+  border-radius: 10px 10px 0px 0px;
+}
+
+thead th {
+  text-align: center;
+  width: 20.2%; /* O cualquier porcentaje basado en la cantidad de columnas */
+}
+
+#thUser {
+  transform: translateX(7%);
+}
+
+#thNombre {
+  transform: translateX(20%);
+}
+
+#thIsEnabled {
+  transform: translateX(30%);
+}
+
+#thRol {
+  transform: translateX(25%);
+}
+
+td {
+  text-align: center;
+  border-left: 0px;
+  border-bottom: solid 0.01em #363535;
+  border-radius: 2px;
+  padding: 0 1em;
+}
+
+#tdUser {
+  padding: 0 1em;
+}
+
+#tdIsEnabled {
+  padding: 0em 1.5em;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+#check {
+  color: rgb(76, 200, 70);
+  transform: translateY(15%);
+}
+
+#notCheck {
+  color: rgb(246, 1, 1);
+  transform: translateY(15%);
+}
+
+#tdRol {
+  padding: 0 1.5em;
+}
+
+#tdEdit {
+  background-color: transparent;
+  padding: 0em 1em;
+}
+
+#tdEdit svg {
+  color: #296bc0;
+}
+
+#tdRem {
+  background-color: transparent;
+  padding: 0em 1em;
+}
+
+#tdRem svg {
+  color: rgb(255, 52, 85);
+}
+
+td a {
+  text-decoration: none;
+  color: black;
+}
   
-  thead {
-    color: white;
-  }
-  
-  th {
-    padding: 0.5em;
-  }
-  
-   #tbFooter {
-    display: inline-flex;
-    flex-direction: row;
-  
-   }
-  
-   #tbFooter a {
-    margin: 0.5em;
-    text-decoration: none;
-    color: white;
-    background-color: #FF8343;
-    border-radius: 15px;
-    padding: 0.3em 0.8em;
-    font-weight: bold;
-   }
-  
-   tbody {
-    background-color: white;
-    border-radius: 5px;
-   }

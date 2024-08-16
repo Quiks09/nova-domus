@@ -12,6 +12,12 @@
     border-bottom: 2px solid rgba(0, 0, 0, 0.184);
     position: relative;
   }
+
+  .headerT img {
+    width: 1em;
+    margin-right: 0.2em;
+    transform: translateY(22%);
+  }
   
   #header .btnMenu {
     flex-grow: 0;

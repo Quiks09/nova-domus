@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import "./Css/Login.css";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaUser, FaEye, FaEyeSlash   } from "react-icons/fa";
 import { useState } from 'react';
 import { Api } from '../lib/api';
@@ -47,8 +47,10 @@ const Login = ({ setRoles }) => {
   return (
     <div id="loginBg">
       <div id="login">
-        <div id="alert"><NoEmptyError msg={ error } /></div>
-        <h1>Inicia Sesion</h1>
+        <div id="loginHead">
+          <div id="alert"><NoEmptyError msg={ error } /></div>
+          <h1>Inicia Sesion</h1>
+        </div>
         <form onSubmit={ login }>
           <div id="inputBox">
             <label for="user" class="label" id="user">Usuario</label>
