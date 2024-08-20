@@ -1,5 +1,5 @@
 import { Dependency } from '../../libs/dependency.js';
-import { ForbiddenError } from '../../libs/forbidden_error.js';
+import { checkPermission } from '../../libs/checkPermission.js';
 
 export class UserController {
   constructor(){
@@ -8,10 +8,7 @@ export class UserController {
   }
 
   async get(req, res) {
-
-
-
-
+    checkPermission(req, 'admin');
 
     const userList = await this.userService.getList();
     res.send(userList);

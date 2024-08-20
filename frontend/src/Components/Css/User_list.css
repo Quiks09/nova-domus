@@ -5,7 +5,8 @@
   justify-content: center;
   flex-grow: 1;
   margin: 0.5em;
-  background: rgba(248, 239, 234, 0.973);
+  background: rgba(248, 239, 234, 0.715);
+  backdrop-filter: blur(60px);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
 

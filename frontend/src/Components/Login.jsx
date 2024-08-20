@@ -14,7 +14,7 @@ const Login = ({ setRoles }) => {
     evt.preventDefault();
     setError('');
 
-    const data = {
+    const body = {
       username: evt.target.username.value,
       password: evt.target.password.value,
     };
@@ -23,7 +23,8 @@ const Login = ({ setRoles }) => {
     Api.post(
       `login`, 
       {
-      body: JSON.stringify(data)
+      body,
+      autoCheck: false
       }
     ).then(res => res.json())
       .then(json => {

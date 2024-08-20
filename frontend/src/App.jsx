@@ -11,12 +11,21 @@ import Vehiculos from './Components/Vehiculos';
 import Favoritos from './Components/Favoritos';
 import MiCuenta from './Components/Mi_cuenta';
 import Footer from './Components/Footer';
+import ModalMessage from './Components/ModalMessage';
+import { Api } from './lib/api';
 
 const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [roles, setRoles]= useState(['admin'])
+  const [message, setMessage] = useState('')
+
+  Api.setMessageForAutoCheck = setMessage;
+
   return(
     <div>
+      <ModalMessage message={ message } onClose={() => setMessage('')}>
+        
+      </ModalMessage>
     <Header setShowMenu={setShowMenu} showMenu = {showMenu}/>
       <div id="body">
         <Menu showMenu = {showMenu} roles = { roles }/>
@@ -39,6 +48,7 @@ const Body = () => {
 function App() {
   return (
     <div className="App">
+
       <Body>
 
       </Body>

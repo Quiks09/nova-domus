@@ -12,8 +12,9 @@
   background-position: center;
   background: #242323;
   background:url('Components/assets/background\ orange.avif') repeat;
-  height: 90vh;
   flex-grow: 1;
+  min-height: 90vh;
+  max-height: auto;
 }
 
 #content {
@@ -28,8 +29,8 @@
   flex-grow: 1;
   display: flex;
   margin: 0.5em;
-  background: rgba(248, 239, 234, 0.937);
-  backdrop-filter: blur(10px);
+  background: rgba(248, 239, 234, 0.658);
+  backdrop-filter: blur(60px);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   align-items: start;

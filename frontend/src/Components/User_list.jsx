@@ -26,7 +26,10 @@ useEffect(() =>    {    Api.get('user',)
                 </tr>
             ))
             setFilas(filas)
-        })}, [])
+            
+        })
+        .catch(e =>{});
+    }, [])
 
 return (
     <div className="bgtabla">
