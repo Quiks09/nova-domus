@@ -31,9 +31,15 @@ const Login = ({ setRoles }) => {
         if (json.error) {
           setError(json.message || "Error desconocido") 
         } else if (json.authorizationToken) {
-          Api.defaultHeaders.Authorization = 'Bearer ' + json.authorizationToken
+          const auth = 'Bearer ' + json.authorizationToken
+          const roles = json.roles || []
+          Api.defaultHeaders.Authorization = auth
+          
+          sessionStorage.setItem('Authorization', auth);
+          sessionStorage.setItem('roles', JSON.stringify(roles));
+
           console.log(json.authorizationToken)
-          setRoles(json.roles || [])
+          setRoles(roles)
           navigate('/landing')
         }  else {setError(json.message || "Error desconocido")}   
       })

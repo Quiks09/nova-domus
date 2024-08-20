@@ -60,7 +60,6 @@ const NextArrow = ({ onClick }) => (
       transform: 'translateY(-50%)',
       zIndex: 1,
       cursor: 'pointer',
-      backgroundColor: 'black',
     }} 
   />
 );

@@ -21,8 +21,8 @@ useEffect(() =>    {    Api.get('user',)
                     <td>{user.displayName}</td>
                     <td id="tdIsEnabled">{user.isEnabled ? <CheckCircleIcon id= "check"></CheckCircleIcon>: <CancelIcon id= "notCheck"></CancelIcon>}</td>
                     <td id="tdRol">{user.roles}</td>
-                    <td id="tdEdit"><Link to="/userForm"> <EditIcon></EditIcon> </Link></td>
-                    <td id="tdRem"><Link to="/userForm"> <PersonRemoveIcon></PersonRemoveIcon> </Link></td>
+                    <td id="tdEdit"><Link to="/"> <EditIcon></EditIcon> </Link></td>
+                    <td id="tdRem"><Link to="/"> <PersonRemoveIcon></PersonRemoveIcon> </Link></td>
                 </tr>
             ))
             setFilas(filas)
@@ -41,7 +41,7 @@ return (
                     <th id="thIsEnabled">Habilitado</th>
                     <th id="thRol">Roles</th>
                     <div id="tbAddUser">
-                        <Link to="/userForm"> <PersonAddAlt1Icon></PersonAddAlt1Icon> </Link>
+                        <Link to="/user-form"> <PersonAddAlt1Icon></PersonAddAlt1Icon> </Link>
                     </div>
                 </tr>
             </thead>

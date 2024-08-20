@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './Components/Header';
 import Menu from './Components/Menu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Login from './Components/Login';
 import { Routes, Route } from 'react-router-dom';
 import Landing from './Components/Landing';
@@ -13,13 +13,23 @@ import MiCuenta from './Components/Mi_cuenta';
 import Footer from './Components/Footer';
 import ModalMessage from './Components/ModalMessage';
 import { Api } from './lib/api';
+import UserForm from './Components/User_form';
 
 const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [roles, setRoles]= useState(['admin'])
   const [message, setMessage] = useState('')
+  
+  useEffect(()=> {
+    const auth = sessionStorage.getItem('Authorization');
+    if (auth) {
+      Api.defaultHeaders.Authorization = auth
+      const roles = JSON.parse(sessionStorage.getItem('roles') ?? '[]');
+      setRoles(roles)
+    }
+    Api.setMessageForAutoCheck = setMessage;
+  }, []);
 
-  Api.setMessageForAutoCheck = setMessage;
 
   return(
     <div>
@@ -32,9 +42,10 @@ const Body = () => {
           <Routes>
             <Route path="/login" element={<Login setRoles={ setRoles }/>} />
 
-            <Route path="" element={<Landing/>} />
+            <Route path="" element={<Login/>} />
             <Route path="/landing" element={<Landing/>} />
             <Route path="/user-list" element={<UserList/>} />
+            <Route path="/user-form" element={<UserForm/>} />
             <Route path="/inmuebles" element={<Inmuebles/>} />
             <Route path="/vehiculos" element={<Vehiculos/>} />
             <Route path="/favoritos" element={<Favoritos/>} />
@@ -46,6 +57,7 @@ const Body = () => {
 }
 
 function App() {
+
   return (
     <div className="App">
 

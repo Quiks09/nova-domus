@@ -20,16 +20,6 @@ export class UserMongo {
   }
   
   async create(data){
-    await UserModel.create({
-      uuid: `${data.uuid}`,
-      username: `${data.username}`,
-      displayName: `${data.displayName}`,
-      hashedPassword: `${data.hashedPassword}`,
-      avatar: `${data.avatar}`, // Asegúrate de incluir el avatar cuando crees un usuario
-    }).then(() => {
-      console.log('Usuario creado exitosamente');
-    }).catch((error) => {
-      console.error('Error al crear el usuario', error);
-    });
+    return UserModel.create(data);
   }
 };

@@ -33,7 +33,7 @@ export class Api {
     }
     
     if (Api.setMessageForAutoCheck) {
-      Api.setMessageForAutoCheck('Hay un error')
+      Api.setMessageForAutoCheck(message)
     }
     throw new Error(message);
   };
