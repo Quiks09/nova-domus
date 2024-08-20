@@ -21,7 +21,7 @@ useEffect(() =>    {    Api.get('user',)
                     <td>{user.displayName}</td>
                     <td id="tdIsEnabled">{user.isEnabled ? <CheckCircleIcon id= "check"></CheckCircleIcon>: <CancelIcon id= "notCheck"></CancelIcon>}</td>
                     <td id="tdRol">{user.roles}</td>
-                    <td id="tdEdit"><Link to="/"> <EditIcon></EditIcon> </Link></td>
+                    <td id="tdEdit"><Link to={'/user-form/' + user.uuid}> <EditIcon></EditIcon> </Link></td>
                     <td id="tdRem"><Link to="/"> <PersonRemoveIcon></PersonRemoveIcon> </Link></td>
                 </tr>
             ))

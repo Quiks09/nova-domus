@@ -46,6 +46,7 @@ const Body = () => {
             <Route path="/landing" element={<Landing/>} />
             <Route path="/user-list" element={<UserList/>} />
             <Route path="/user-form" element={<UserForm/>} />
+            <Route path="/user-form/:uuid" element={<UserForm/>} />
             <Route path="/inmuebles" element={<Inmuebles/>} />
             <Route path="/vehiculos" element={<Vehiculos/>} />
             <Route path="/favoritos" element={<Favoritos/>} />

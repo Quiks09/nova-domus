@@ -13,7 +13,19 @@ export class Api {
       options.body = JSON.stringify(options.body);
     }
 
-    const res = await fetch( `${urlBase}/${service}`, options);
+    let url = `${urlBase}/${service}`;
+
+    if (options.search){
+      let search = options.search;
+
+      if (typeof search !== 'string'){
+        search = new URLSearchParams(search).toString();
+      }
+      
+      url += '?' + search;
+    }
+
+    const res = await fetch( url, options);
 
     if (options.autoCheck === false){
       return res;

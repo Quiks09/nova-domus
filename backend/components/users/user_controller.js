@@ -10,7 +10,7 @@ export class UserController {
   async get(req, res) {
     checkPermission(req, 'admin');
 
-    const userList = await this.userService.getList();
+    const userList = await this.userService.getList(req.query);
     res.send(userList);
   }
 

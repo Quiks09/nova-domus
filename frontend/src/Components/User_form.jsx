@@ -1,12 +1,14 @@
-import { json, Link } from 'react-router-dom';
+import {  Link, useParams } from 'react-router-dom';
+import './Css/User_form.css'
 import IconUser from '@mui/icons-material/Person';
 import IconCancel from '@mui/icons-material/Cancel';
 import IconSubmit from '@mui/icons-material/Send';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Api } from '../lib/api';
 
 
 const UserForm = () => {
+    const {uuid} = useParams();
     const [username, setUsername] = useState('');
     const [displayName, setDisplayName] = useState('');
     const [password, setPassword] = useState('');
@@ -16,6 +18,7 @@ const UserForm = () => {
     function updateRoles(e) {
         const options = [...e.target.selectedOptions];
         const values = options.map(option => option.value);
+        setRoles(values)
     }
 
     function submit(e) {
@@ -28,15 +31,49 @@ const UserForm = () => {
                 isEnabled,
                 roles,
             };
-    
+            
+            let method = uuid?
+            'PATCH' : 
+            'POST';
+
+            if (uuid) {
+                body.uuid = uuid;
+            }
     
 
-        Api.post('user', { body,  })
+        Api.post('user', { method, body  })
             .then(() => {
                 alert('Usuario Creado!');
             })
             .catch(e => {})
-        }
+    }
+
+        useEffect (() => {
+
+            if (!uuid ) {
+                return;
+            }
+
+            Api.get('user', {search: {uuid}})
+            .then(res => res.json())
+            .then(UserList => {
+                if (!UserList.length) {
+                    return;
+                }
+
+                const user = UserList[0];
+
+                setUsername(user.username);
+                setDisplayName(user.displayName);
+                setIsEnabled(user.isEnabled);
+                setRoles(user.roles.split(',').map(i => i.trim()).filter(i => i));
+
+
+            })
+            .catch(e => {})
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, []);
+        
     
         return (
         <div id="user" className="form">
@@ -64,7 +101,7 @@ const UserForm = () => {
                     </li>
                     <li className="field">
                     <label htmlFor="roles">Roles</label>
-                    <select id="roles" name="roles" multiple="multiple" defaultValue={roles} onChange={(updateRoles)}>
+                    <select id="roles" name="roles" multiple="multiple" value={roles} onChange={(updateRoles)}>
                     <option value="admin">Admin</option>
                     <option value="user">User</option>
                     </select>
