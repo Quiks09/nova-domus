@@ -29,7 +29,7 @@ const UserForm = () => {
                 displayName,
                 password,
                 isEnabled,
-                roles,
+                roles: roles.join(','),
             };
             
             let method = uuid?
@@ -41,7 +41,7 @@ const UserForm = () => {
             }
     
 
-        Api.post('user', { method, body  })
+        Api.fetch('user', { method, body  })
             .then(() => {
                 alert('Usuario Creado!');
             })

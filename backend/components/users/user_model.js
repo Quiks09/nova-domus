@@ -9,7 +9,10 @@ export const UserModel = mongoose.model(
     hashedPassword: String,
     isEnabled: Boolean,
     roles: String,
-    avatar: String, // Agrega el campo avatar aquí
+    avatar: String,
+    deletedAt: Date,
+    createdAt: Date,
+    updatedAt: Date,
   })
 );
 
@@ -21,5 +24,9 @@ export class UserMongo {
   
   async create(data){
     return UserModel.create(data);
+  }
+
+  async update(filter, data) {
+    return UserModel.updateMany(filter, data);
   }
 };

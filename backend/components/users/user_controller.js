@@ -18,6 +18,20 @@ export class UserController {
     await this.userService.create(req.body);
     res.status(204).end();
   }
+
+  async patch(req,res){
+    checkPermission(req, 'admin');
+
+    await this.userService.updateForUuid(req.body.uuid, req.body);
+    res.status(204).end();
+  }
+  async delete(req,res){
+    checkPermission(req, 'admin');
+
+    await this.userService.deleteForUuid(req.query.uuid);
+    res.status(204).end();
+  }
+
 }
 
 

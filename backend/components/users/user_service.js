@@ -10,6 +10,8 @@ export class UserService {
   }
 
   async getList(filters, option) {
+    filters = {...filters};
+    filters.deletedAt = null;
     return this.userData.getList(filters,option);
   }
 
@@ -45,29 +47,45 @@ export class UserService {
     return bcrypt.compare(password, hash);
   }
 
+  
   async create(data) {
     if (!data?.username) {
       throw new MissingParameterError('username');
     }
-
+    
     if (!data.displayName) {
       throw new MissingParameterError('displayName');
     }
-
+    
     if (!data.password) {
       throw new Error('Password');
     }
-
+    
     if (await this.getForUsernameOrNull(data.username)) {
       throw new ConflictError('El usuario ya existe.');
     }
 
+    const now = new Date;
+    data.createdAt = now;
+    data.updatedAt = now;
+    
     data.uuid = uuid.v4();
-
+    
     data.hashedPassword = await this.hashPassword(data.password);
     delete data.password;
-
+    
     this.userData.create(data);
+  }
+
+  async updateForUuid (uuid,data) {
+    data = {...data};
+    data.updatedAt = new Date;
+    return this.userData.update({uuid}, data);
+  }
+  async deleteForUuid (uuid) {
+    const data = {};
+    this.userData.update({uuid}, {deletedAt: new Date});
+    return this.userData.update({uuid}, data);
   }
 }
 
