@@ -15,6 +15,7 @@
 #texto {
   display: flex;
   flex-direction: row;
+  margin-top: 0.5em;
 }
 
 #texto a {
@@ -24,6 +25,7 @@
   flex-direction: row;
   padding: 0 1.5em ;
   border-right: solid white 3px ;
+  margin-bottom: 0.5em;
 }
 
 #redes {
@@ -34,4 +36,32 @@
 
 #redes a {
   border-right: none;
+}
+
+@media (max-width: 800px) {
+  
+  #footer  {
+      flex-direction: column;
+  }
+   #texto {
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+  }
+  
+  #texto a {
+     border-right: none ;
+  }
+
+  #texto div {
+    margin: 1em;
+  }
+
+  #iconos svg {
+    font-size: 2em;
+  }
+
+  #logo {
+    font-size: 2em;
+  }
 }

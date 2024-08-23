@@ -12,9 +12,13 @@ function ModalYesNo({ message, show, onYes, onNo }){
 
     return (
       <div className="modal background">
-        <Alert variant="filled" severity="error">{ message }</Alert>
-        <button onClick={onYes}>Si</button>
-        <button onClick={onNo}>No</button>
+        <div className="modal-container">
+          <Alert variant="filled" severity="error">{ message }</Alert>
+          <div className="modal-opts">
+            <button onClick={onYes}>Si</button>
+            <button onClick={onNo}>No</button>
+          </div>
+        </div>
       </div>
   )
   }

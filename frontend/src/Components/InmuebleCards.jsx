@@ -1,74 +1,62 @@
 import React, { useState } from 'react';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { CardContent, CardActions, Typography, Button } from '@mui/material';
 import Slider from 'react-slick';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-// Estilo personalizado para el botón de expandir
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
-// Flechas personalizadas
 const PrevArrow = ({ onClick }) => (
-  <ArrowBackIosNewIcon 
-    onClick={onClick} 
+  <ArrowBackIosNewIcon
+    onClick={onClick}
     style={{
-      color: 'rgba(248, 239, 234, 0.808)',
+      color: 'white',
       fontSize: '2.5em',
       position: 'absolute',
       top: '50%',
-      left: '10px',
+      left: '0px',
       transform: 'translateY(-50%)',
       zIndex: 1,
-      cursor: 'pointer'
-    }} 
+      cursor: 'pointer',
+      hover:'',
+      background: 'linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0))',
+      padding: '150px 50px 150px 0',
+    }}
   />
 );
 
 const NextArrow = ({ onClick }) => (
-  <ArrowForwardIosIcon 
-    onClick={onClick} 
+  <ArrowForwardIosIcon
+    onClick={onClick}
     style={{
-      color: 'rgba(248, 239, 234, 0.808)',
+      color: 'white',
       fontSize: '2.5em',
       position: 'absolute',
       top: '50%',
-      right: '10px',
+      right: '0px',
       transform: 'translateY(-50%)',
       zIndex: 1,
       cursor: 'pointer',
-    }} 
+      background: 'linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0))',
+      padding: '150px 0px 150px 50px',
+    }}
   />
 );
 
 export default function InmuebleCard({ inmueble }) {
   const [expanded, setExpanded] = useState(false);
+  const [hover, setHover] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded((prevExpanded) => !prevExpanded);
+  };
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
   };
 
   const settings = {
@@ -82,96 +70,96 @@ export default function InmuebleCard({ inmueble }) {
   };
 
   return (
-    <Card
-      sx={{
-        width: 350, // Aumenta el tamaño de la tarjeta
-        borderRadius: 5, // Redondea los bordes
-        boxShadow: 12, // Añade sombra para el efecto de relieve
-        backgroundColor: 'rgba(255, 255, 255, 0.7)', // Fondo semitransparente
-        transition: 'transform 0.2s', // Transición para el efecto hover
-        '&:hover': {
-          transform: 'scale(1.08)', // Efecto de zoom al pasar el ratón
-        },
+    <div
+      style={{
+        width: '375px',
+        margin: 'auto',
+        position: 'relative',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+        transition: 'transform 0.3s',
+        borderRadius: '0 0 10px 10px',
+        overflow: 'hidden',
+        backgroundColor: 'white',
+        transform: hover ? 'scale(1.08)' : 'scale(1)', 
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
       }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <CardHeader
-        avatar={
-          <Avatar
-            sx={{ bgcolor: red[500] }}
-            aria-label="recipe"
-            src={inmueble.user_id?.avatar}
-          >
-            {!inmueble.user_id?.avatar && inmueble.city.charAt(0)}
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={inmueble.estate_type}
-        subheader={new Date(inmueble.publication_date).toLocaleDateString()}
-      />
+      <div style={{
+        backgroundColor: '#127281',
+        color: 'white',
+        padding: '5px 10px',
+        position: 'absolute',
+        top: '-2px',
+        left: '10px',
+        zIndex: 20,
+        borderRadius: '0 0 5px 5px',
+        boxShadow: '0 4px 2px rgba(0, 0, 0, 0.4)'
+      }}>
+        {inmueble.estate_type}
+      </div>
+
       <Slider {...settings}>
         {inmueble.photos.map((photo, index) => (
           <div key={index}>
-            <img 
-              src={photo.image_url} 
-              alt={`Inmueble ${index + 1}`} 
-              style={{
-                width: '100%',
-                height: '300px', // Ajusta la altura de la imagen
-                objectFit: 'cover',
-                transition: 'transform 0.2s', 
-                '&:hover': {
-                  transform: 'scale(1.08)', // Efecto de zoom al pasar el ratón
-                },
-              }}
+            <img
+              src={photo.image_url}
+              alt={`Inmueble ${index + 1}`}
+              style={{ width: '100%', height: '300px', objectFit: 'cover' }}
             />
           </div>
         ))}
       </Slider>
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
+
+      <CardContent style={{ padding: '16px', backgroundColor: 'white', flex: '1 0 auto' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '10px'
+        }}>
+          <Typography variant="h6" style={{ fontFamily:'Poppins', fontWeight: 'bold', color: '#333'}}>
+            {inmueble.city}
+          </Typography>
+          <span style={{
+            fontFamily:'Poppins',
+            backgroundColor: 'green',
+            color: 'white',
+            marginTop:'10px',
+            padding: '5px 20px',
+            borderRadius: '5px 0 0 5px',
+            transform: 'translateX(13%)'
+          }}>
+            {inmueble.price} {inmueble.currency}
+          </span>
+        </div>
+        <Typography variant="body2" style={{ fontFamily:'Poppins',color: 'black' }}>
           {inmueble.description}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
+
+      <CardActions style={{ justifyContent: 'center', padding: '16px' }}>
+        <Button
           onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
+          fullWidth
+          variant="contained"
+          style={{ fontFamily:'Poppins', backgroundColor: 'black', color: 'white', width: '90%', marginBottom:'10px', textTransform:'capitalize' }}
         >
-          <ExpandMoreIcon />
-        </ExpandMore>
+          {expanded ? 'Menos Detalles' : 'Mas Detalles'}
+        </Button>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Detalles:</Typography>
-          <Typography paragraph>
-            Precio: {inmueble.price} {inmueble.currency}
-          </Typography>
-          <Typography paragraph>
-            Dirección: {inmueble.address}, {inmueble.city}
-          </Typography>
-          <Typography paragraph>
-            Área: {inmueble.area} m²
-          </Typography>
-          <Typography paragraph>
-            Habitaciones: {inmueble.rooms} 
-          </Typography>
-          <Typography paragraph>
-            Baños: {inmueble.bathrooms}
-          </Typography>
+
+      {expanded && (
+        <CardContent style={{ padding: '16px', borderTop: '1px solid #eee', marginTop: '10px', backgroundColor: 'white' }}>
+          <Typography variant="body2"><strong>Dirección:</strong> {inmueble.address}</Typography>
+          <Typography variant="body2"><strong>Área:</strong> {inmueble.area} m²</Typography>
+          <Typography variant="body2"><strong>Habitaciones:</strong> {inmueble.rooms}</Typography>
+          <Typography variant="body2"><strong>Baños:</strong> {inmueble.bathrooms}</Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+      )}
+    </div>
   );
 }

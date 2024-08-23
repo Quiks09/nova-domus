@@ -7,11 +7,10 @@ import IconSubmit from '@mui/icons-material/Send';
 import { useEffect, useState } from 'react';
 import { Api } from '../lib/api';
 
-const UserForm = () => {
+const UserFormEdit = () => {
     const {uuid} = useParams();
     const [username, setUsername] = useState('');
     const [displayName, setDisplayName] = useState('');
-    const [password, setPassword] = useState('');
     const [isEnabled, setIsEnabled] = useState(true);
     const [roles, setRoles] = useState([]);
 
@@ -27,7 +26,6 @@ const UserForm = () => {
         const body = {
             username,
             displayName,
-            password,
             isEnabled,
             roles: roles.join(','),
         };
@@ -40,7 +38,7 @@ const UserForm = () => {
 
         Api.fetch('user', { method, body })
             .then(() => {
-                alert('Usuario Creado!');
+                alert('Usuario Modificado!');
             })
             .catch(e => {})
     }
@@ -72,7 +70,7 @@ const UserForm = () => {
             <div id="user" className="form">
                 <h2>
                     <IconUser className="icon" />
-                    Nuevo Usuario
+                    Modificar Usuario
                 </h2>
                 <form onSubmit={submit}>
                     <ul className="fields">
@@ -83,10 +81,6 @@ const UserForm = () => {
                         <li className="field">
                             <label htmlFor="displayName">Nombre completo</label>
                             <input id="displayName" name="displayName" value={displayName} onChange={e => setDisplayName(e.target.value)} />
-                        </li>
-                        <li className="field">
-                            <label htmlFor="password">Contraseña</label>
-                            <input id="password" name="password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
                         </li>
                         <li className="field">
                             <label htmlFor="isEnabled">Habilitado</label>
@@ -110,4 +104,4 @@ const UserForm = () => {
     )
 }
 
-export default UserForm;
+export default UserFormEdit;

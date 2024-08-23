@@ -13,12 +13,6 @@
     position: relative;
   }
 
-  .headerT img {
-    width: 1em;
-    margin-right: 0.2em;
-    transform: translateY(22%);
-  }
-  
   #header .btnMenu {
     flex-grow: 0;
     transform: translateY(50%);
@@ -26,11 +20,21 @@
     cursor: pointer;
     margin-right: 3em;
   }
+
+  #headerT img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.3em;
+  }
   
   
-  #header .headerT {
+  
+  #header #headerT {
+    display: flex;
+    flex-direction: row;
     flex-grow: 1;
     text-align: center;
+    justify-content: center;
   }
   
   
@@ -38,22 +42,36 @@
     font-size: 18px;
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: #179BAE;
+    border: 2px solid #179BAE;
     border-radius: 40px;
     padding: 3px 10px;
     height: 40px;
     cursor: pointer;
     text-decoration: none;
-    color:#763010;
+    color:white;
     margin-left: 10px;
+    box-shadow:  1px 1px 2px rgba(0, 0, 0, 0.9);
   }
   
   .loginHeader a:hover {
-    background-color:#f6e1d7;
-    color: #763010;
+    background-color: #106b7ace;
   }
   
   .loginHeader svg {
-    color:#763010;
+    color:white;
     margin-right: 0.3em;
   }
+
+  
+@media (max-width: 800px) {
+  
+  #header .headerText {
+      display: none;
+  }
+  
+ 
+  #logoHeader {
+      font-size: 150%;
+  }
+}

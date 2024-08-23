@@ -28,11 +28,9 @@
  .hero {
   flex-grow: 1;
   display: flex;
-  margin: 0.5em;
-  background: rgba(248, 239, 234, 0.658);
+  background: radial-gradient(circle, #ffffff, #ebfdfdda, #eaf2f9e1);
   backdrop-filter: blur(60px);
   border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
   align-items: start;
   justify-content: center;
  }

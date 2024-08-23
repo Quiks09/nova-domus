@@ -23,9 +23,9 @@ const Footer = () => {
                 <div id="redes">
                     <a href="#">Redes Sociales</a>
                     <div id="iconos">
-                        <a href="#"><InstagramIcon/></a>
-                        <a href="#"><XIcon/></a>
-                        <a href="#"><FacebookIcon/></a>
+                        <a id="svg" href="#"><InstagramIcon/></a>
+                        <a id="svg" href="#"><XIcon/></a>
+                        <a id="svg" href="#"><FacebookIcon/></a>
                     </div>
                 </div>
             </div>

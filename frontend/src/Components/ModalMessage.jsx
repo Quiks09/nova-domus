@@ -11,8 +11,10 @@ function ModalMessage({ message, onClose }){
 
     return (
       <div className="modal background">
-        <Alert variant="filled" severity="error">{ message }</Alert>
-        <button onClick={onClose}>Cerrar</button>
+        <div className="modal-container">
+          <Alert variant="filled" severity="error">{ message }</Alert>
+          <div className="modal-opts"><button onClick={onClose}>Cerrar</button></div>
+        </div>
       </div>
   )
   }

@@ -14,6 +14,7 @@ import Footer from './Components/Footer';
 import ModalMessage from './Components/ModalMessage';
 import { Api } from './lib/api';
 import UserForm from './Components/User_form';
+import UserFormEdit from './Components/User_form_edit';
 
 const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -42,11 +43,11 @@ const Body = () => {
           <Routes>
             <Route path="/login" element={<Login setRoles={ setRoles }/>} />
 
-            <Route path="" element={<Login/>} />
+            <Route path="" element={<Login setRoles={ setRoles }/>} />
             <Route path="/landing" element={<Landing/>} />
             <Route path="/user-list" element={<UserList/>} />
             <Route path="/user-form" element={<UserForm/>} />
-            <Route path="/user-form/:uuid" element={<UserForm/>} />
+            <Route path="/user-form/:uuid" element={<UserFormEdit/>} />
             <Route path="/inmuebles" element={<Inmuebles/>} />
             <Route path="/vehiculos" element={<Vehiculos/>} />
             <Route path="/favoritos" element={<Favoritos/>} />
@@ -58,6 +59,7 @@ const Body = () => {
 }
 
 function App() {
+  
 
   return (
     <div className="App">
