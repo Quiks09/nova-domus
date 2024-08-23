@@ -11,7 +11,7 @@
     align-items: stretch;
     background: rgb(248, 239, 234);
     backdrop-filter: blur(10px);
-    border-radius: 12px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -19,8 +19,8 @@
   }
 
   #loginHead {
-    background-color: #dc5d1d;
-    border-radius: 12px 12px 0 0;
+    background-color: #ff8243;
+    border-radius: 5px 5px 0 0;
   }
 
   #alert {
@@ -52,7 +52,7 @@
     font-size: small;
     border: 2px solid #ff8243;
     border-bottom: none;
-    border-radius: 40px 40px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     border-bottom: none;
     margin-left: 2.11em;
     margin-right: 350px;
@@ -72,7 +72,7 @@
     background: transparent;
     outline: none;
     border: 2px solid #403f3f3a;
-    border-radius: 0px 40px 40px 40px;
+    border-radius: 0px 10px 10px 10px;
     font-size: 16px;
     color: #242323;
     padding-left: 21px;
@@ -100,7 +100,7 @@
     top: 40%;
     transform: translateY(100%);
     font-size: 20px;
-    color: #242323;
+    color: #09616e;
   }
   
   #inputBox .iconPwd:hover {
@@ -117,7 +117,7 @@
   }
   
   #remember-forgot label input {
-    accent-color: #242323;
+    accent-color: #179BAE;
     margin-right: 4px;
     margin-left: 8px;
   }
@@ -129,7 +129,7 @@
     background: #179BAE;
     border: none;
     outline: none;
-    border-radius: 40px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 16px;
