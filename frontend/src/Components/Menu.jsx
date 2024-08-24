@@ -9,7 +9,7 @@ const Menu = ({showMenu, roles}) => {
       key: 'landing',
       to: 'landing',
       label: 'Inicio',
-      roles: ['admin', 'user'],
+      roles: ['admin', 'user', ''],
     },
 
     {

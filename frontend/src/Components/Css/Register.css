@@ -1,8 +1,9 @@
-#loginBg {
+/* Estilos para Register.css */
+#registerBg {
     flex-grow: 1;
-  }
-  
-  #login {
+}
+
+#register {
     margin: 2em auto;
     max-width: 420px;
     min-width: 500px;
@@ -16,57 +17,49 @@
     flex-direction: column;
     margin-bottom: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
-  }
+}
 
-  #loginHead {
+#registerHead {
     background-color: #ff8243;
     border-radius: 5px 5px 0 0;
-  }
+}
 
-  #alert {
+#alert {
     margin-left: 0.5em;
     transform: translateY(25%);
     width: 30em;
-    
-  }
-  
-  #login h1 {
+}
+
+#register h2 {
     font-size: 36px;
     font-weight: 500;
     text-align: center;
     color: white;
+}
 
-  }
-  
-  #login #inputBox {
+#register #inputBox {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 30px 0;
     margin-bottom: 40px;
-  }
-  
-  #inputBox label {
+}
+
+#inputBox label {
     color: white;
     background-color: #ff8243;
     font-size: small;
     border: 2px solid #ff8243;
-    border-bottom: none;
     border-radius: 10px 10px 0px 0px;
-    border-bottom: none;
     margin-left: 2.11em;
     margin-right: 350px;
     font-weight: 600;
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-  
-  #inputBox #user {
-    padding-right: 30px;
-  }
-  
-  #inputBox input {
+}
+
+#inputBox input {
     width: 85%;
     height: 100%;
     background: transparent;
@@ -77,23 +70,23 @@
     color: #242323;
     padding-left: 21px;
     margin-left: 4px;
-  }
-  
-  #inputBox input::placeholder {
+}
+
+#inputBox input::placeholder {
     color: #1a1919;
     font-weight: 200;
     margin-left: 0px;
-  }
-  
-  #inputBox input:hover {
+}
+
+#inputBox input:hover {
     background-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  #inputBox input:focus {
+}
+
+#inputBox input:focus {
     background-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  #inputBox .icon {
+}
+
+#inputBox .icon {
     display: flex;
     position: absolute;
     right: 50px;
@@ -101,28 +94,18 @@
     transform: translateY(100%);
     font-size: 20px;
     color: #09616e;
-  }
-  
-  #inputBox .iconPwd:hover {
-    cursor: pointer; 
-  }
-  
-  #login #remember-forgot {
+}
+
+#register #buttons {
     display: flex;
     justify-content: space-around;
     font-size: 14.5px;
     font-weight: 400;
     margin: 15px 0;
     color: #242323;
-  }
-  
-  #remember-forgot label input {
-    accent-color: #179BAE;
-    margin-right: 4px;
-    margin-left: 8px;
-  }
-  
-  #login #btnlogin {
+}
+
+#register #btnSubmit {
     width: 75%;
     margin-bottom: 12px;
     height: 45px;
@@ -135,22 +118,31 @@
     font-size: 16px;
     color: white;
     font-weight: 700;
-  }
-  
-  #login #btnlogin:hover {
+}
+
+#register #btnSubmit:hover {
     cursor: pointer;
     background-color:#065965ba;
     color: rgba(255, 255, 255, 0.77);
-    
-  }
+}
 
-  #login #new-account {
-    display: flex;
-    justify-content: space-around;
-    border-top: 2px solid #403f3f3a;
-    font-size: 14.5px;
-    font-weight: 400;
-    margin: 15px 10%;
-    padding-top: 1em;
-    color: #242323;
-  }
+#register .cancel {
+    width: 75%;
+    margin-bottom: 12px;
+    height: 45px;
+    background: #f44336;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+}
+
+#register .cancel:hover {
+    cursor: pointer;
+    background-color:#d32f2f;
+    color: rgba(255, 255, 255, 0.77);
+}

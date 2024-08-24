@@ -11,7 +11,8 @@
   background-size: cover;
   background-position: center;
   background: #242323;
-  background:url('Components/assets/background\ orange.avif') repeat;
+  /*background:url('Components/assets/background\ orange.avif') repeat;*/
+  background: url(Components/assets/background\ Valle_de_la-2.avif);
   flex-grow: 1;
   min-height: 90vh;
   max-height: auto;

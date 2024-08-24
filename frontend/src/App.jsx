@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import Menu from './Components/Menu';
 import { useEffect, useState } from 'react';
 import Login from './Components/Login';
+import Register from './Components/Register';
 import { Routes, Route } from 'react-router-dom';
 import Landing from './Components/Landing';
 import UserList from './Components/User_list';
@@ -42,6 +43,7 @@ const Body = () => {
         <Menu showMenu = {showMenu} roles = { roles }/>
           <Routes>
             <Route path="/login" element={<Login setRoles={ setRoles }/>} />
+            <Route path="/register" element={<Register/>} />
 
             <Route path="" element={<Login setRoles={ setRoles }/>} />
             <Route path="/landing" element={<Landing/>} />

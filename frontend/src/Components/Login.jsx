@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import "./Css/Login.css";
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaEye, FaEyeSlash   } from "react-icons/fa";
 import { useState } from 'react';
@@ -75,6 +76,12 @@ const Login = ({ setRoles }) => {
           </div>
 
           <button type="submit" id="btnlogin">Iniciar Sesion</button>
+
+          <div id="new-account">
+            <label>Nuevo Usuario?</label>
+          </div>
+
+          <Link to='/register'><button type="submit" id="btnlogin">Registrarme</button></Link>
         
         </form>
       </div>
