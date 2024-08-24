@@ -22,7 +22,7 @@
   }
 
   #headerT img {
-    width: 1.5em;
+    width: 2em;
     height: 1.5em;
     margin-right: 0.3em;
   }
@@ -64,7 +64,7 @@
   }
 
   
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   
   #header .headerText {
       display: none;
