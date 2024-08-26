@@ -11,12 +11,13 @@ export class UserController {
     checkPermission(req, 'admin');
 
     const userList = await this.userService.getList(req.query);
-    const result = userList.map(u => ({
-      uuid: u.uuid,
-      username: u.username,
-      displayName: u.displayName,
-      isEnabled: u.isEnabled,
-      avatar: u.avatar
+    const result = userList.map(user => ({
+      uuid: user.uuid,
+      username: user.username,
+      displayName: user.displayName,
+      isEnabled: user.isEnabled,
+      roles: user.roles,
+      avatar: user.avatar
     }));
     res.send(result);
   }
