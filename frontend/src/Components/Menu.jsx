@@ -23,14 +23,14 @@ const Menu = ({showMenu, roles}) => {
       key: 'inmuebles',
       to: 'inmuebles',
       label: 'Inmuebles',
-      roles: ['admin', 'user'],
+      roles: ['admin', 'user', ''],
     },
 
     {
       key: 'vehiculos',
       to: 'vehiculos',
       label: 'Vehiculos',
-      roles: ['admin', 'user'],
+      roles: ['admin', 'user', ''],
     },
 
     {

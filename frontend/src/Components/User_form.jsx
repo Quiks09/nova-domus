@@ -59,10 +59,10 @@ const UserForm = () => {
 
                 const user = UserList[0];
 
-                setUsername(user.username);
-                setDisplayName(user.displayName);
-                setIsEnabled(user.isEnabled);
-                setRoles(user.roles.split(',').map(i => i.trim()).filter(i => i));
+                setUsername(user.username ?? '');
+                setDisplayName(user.displayName ?? '');
+                setIsEnabled(user.isEnabled ?? false);
+                setRoles(user.roles.split(',').map(i => i.trim()).filter(i => i) ?? []);
             })
             .catch(e => {})
     }, []);
