@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: row;
     background: rgb(255,149,67);
-background: linear-gradient(30deg, rgba(255,149,67,1) 27%, rgba(255,101,67,1) 69%, rgba(255,131,67,1) 100%);
+    background: linear-gradient(30deg, rgba(255,149,67,1) 27%, rgba(255,101,67,1) 49%, rgba(255,131,67,1) 100%);
     font-size: 300%;
     font-weight: bolder;
     color: white;
