@@ -18,16 +18,16 @@
     transform: translateY(50%);
     left: 10px;
     cursor: pointer;
-    margin-right: 3em;
   }
 
-  #headerT img {
+  #headerT #logo {
     width: 2em;
     height: 1.5em;
-    margin-right: 0.3em;
   }
   
-  
+  #logoM {
+    display: none;
+  }
   
   #header #headerT {
     display: flex;
@@ -39,20 +39,22 @@
   }
   
   
-  .loginHeader a {
+  .loginHeader {
     font-size: 18px;
     display: flex;
     align-items: center;
     background-color: #179BAE;
     border: 2px solid #179BAE;
-    border-radius: 40px;
+    border-radius: 100px;
     padding: 3px 10px;
     height: 40px;
     cursor: pointer;
+    box-shadow:  1px 1px 2px rgba(0, 0, 0, 0.9);
+  }
+  
+  .loginHeader a {
     text-decoration: none;
     color:white;
-    margin-left: 10px;
-    box-shadow:  1px 1px 2px rgba(0, 0, 0, 0.9);
   }
   
   .loginHeader a:hover {
@@ -71,8 +73,25 @@
       display: none;
   }
   
- 
-  #logoHeader {
-      font-size: 150%;
+  #logo {
+    display: none;
+  }
+
+  #logoM {
+    display: flex;
+    width: 2em;
+    height: 2em;
+  }
+
+  .loginHeader {
+    transform: translateY(55%);
+  }
+
+  #loginIcon svg {
+    font-size: 2em;
+  }
+
+  .loginHeader #loginT {
+    display: none;
   }
 }
