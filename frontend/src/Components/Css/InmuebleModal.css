@@ -1,0 +1,81 @@
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    min-width: 40%;
+    min-height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .thumbnail {
+    width: 250px;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .modal-details {
+    text-align: left;
+  }
+  
+  .carousel-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-content {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1em;
+    max-width: 70%;
+    max-height: 70%;
+    overflow: auto;
+    height: auto;
+  }
+  
+  .carousel-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  

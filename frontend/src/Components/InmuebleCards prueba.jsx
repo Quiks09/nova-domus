@@ -18,7 +18,6 @@ const PrevArrow = ({ onClick }) => (
       transform: 'translateY(-50%)',
       zIndex: 1,
       cursor: 'pointer',
-      hover:'',
       background: 'linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0))',
       padding: '150px 50px 150px 0',
     }}
@@ -43,22 +42,7 @@ const NextArrow = ({ onClick }) => (
   />
 );
 
-export default function InmuebleCard({ inmueble }) {
-  const [expanded, setExpanded] = useState(false);
-  const [hover, setHover] = useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded((prevExpanded) => !prevExpanded);
-  };
-
-  const handleMouseEnter = () => {
-    setHover(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHover(false);
-  };
-
+export default function InmuebleCard({ inmueble, onExpandClick }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -67,6 +51,16 @@ export default function InmuebleCard({ inmueble }) {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+  };
+
+  const [hover, setHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
   };
 
   return (
@@ -83,7 +77,7 @@ export default function InmuebleCard({ inmueble }) {
         transform: hover ? 'scale(1.08)' : 'scale(1)', 
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -97,7 +91,7 @@ export default function InmuebleCard({ inmueble }) {
         left: '10px',
         zIndex: 20,
         borderRadius: '0 0 5px 5px',
-        boxShadow: '0 4px 2px rgba(0, 0, 0, 0.4)'
+        boxShadow: '0 4px 2px rgba(0, 0, 0, 0.4)',
       }}>
         {inmueble.estate_type}
       </div>
@@ -108,8 +102,7 @@ export default function InmuebleCard({ inmueble }) {
             <img
               src={photo.image_url}
               alt={`Inmueble ${index + 1}`}
-              style={{ width: '100%', height: '300px', objectFit: 'cover' }}
-            />
+              style={{ width: '100%', height: '300px', objectFit: 'cover' }}/>
           </div>
         ))}
       </Slider>
@@ -119,47 +112,38 @@ export default function InmuebleCard({ inmueble }) {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          marginBottom: '10px'
+          marginBottom: '10px',
         }}>
-          <Typography variant="h6" style={{ fontFamily:'Poppins', fontWeight: 'bold', color: '#333'}}>
+          <Typography variant="h6" style={{ fontFamily: 'Poppins', fontWeight: 'bold', color: '#333' }}>
             {inmueble.city}
           </Typography>
           <span style={{
-            fontFamily:'Poppins',
+            fontFamily: 'Poppins',
             backgroundColor: 'green',
             color: 'white',
-            marginTop:'10px',
+            marginTop: '10px',
             padding: '5px 20px',
             borderRadius: '5px 0 0 5px',
-            transform: 'translateX(13%)'
+            transform: 'translateX(13%)',
           }}>
             {inmueble.price} {inmueble.currency}
           </span>
         </div>
-        <Typography variant="body2" style={{ fontFamily:'Poppins',color: 'black' }}>
+        <Typography variant="body2" style={{ fontFamily: 'Poppins', color: 'black' }}>
           {inmueble.description}
         </Typography>
       </CardContent>
 
       <CardActions style={{ justifyContent: 'center', padding: '16px' }}>
         <Button
-          onClick={handleExpandClick}
+          onClick={onExpandClick}
           fullWidth
           variant="contained"
-          style={{ fontFamily:'Poppins', backgroundColor: 'black', color: 'white', width: '90%', marginBottom:'10px', textTransform:'capitalize' }}
+          style={{ fontFamily: 'Poppins', backgroundColor: 'black', color: 'white', width: '90%', marginBottom: '10px', textTransform: 'capitalize' }}
         >
-          {expanded ? 'Menos Detalles' : 'Mas Detalles'}
+          Más Detalles
         </Button>
       </CardActions>
-
-      {expanded && (
-        <CardContent style={{ padding: '16px', borderTop: '1px solid #eee', marginTop: '10px', backgroundColor: 'white' }}>
-          <Typography variant="body2"><strong>Dirección:</strong> {inmueble.address}</Typography>
-          <Typography variant="body2"><strong>Área:</strong> {inmueble.area} m²</Typography>
-          <Typography variant="body2"><strong>Habitaciones:</strong> {inmueble.rooms}</Typography>
-          <Typography variant="body2"><strong>Baños:</strong> {inmueble.bathrooms}</Typography>
-        </CardContent>
-      )}
     </div>
   );
 }

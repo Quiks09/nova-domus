@@ -120,7 +120,6 @@
 
 @media (max-width: 520px) {
   #login {
-    width: 90%;
     margin: 1em auto;
     max-width: 90%;
   }

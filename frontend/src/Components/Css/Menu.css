@@ -7,6 +7,7 @@
     background: #242323;
     transform: all .2s;
     height: auto;
+    width: auto;
   }
   
   
@@ -19,17 +20,46 @@
     list-style-type: none;
     margin-bottom: 1em;
     margin-left: 0;
-    
    }
   
    ul li a {
     text-decoration: none;
     color: white;
-    display: block;
+    display: flex;
     border-radius: 6px;
     padding: 0.5em 1.5em;
    }
   
    ul li a:hover, li a:focus {
     background: #383838e3;
+   }
+
+   @media screen and (max-width: 520px) {
+    .mainMenu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-weight: 500;
+      background: hsl(0, 1%, 14%);
+      transform: all .2s;
+      height: auto;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+     }
+
+    ul li a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 6px;
+      width: 5em;
+     }
    }

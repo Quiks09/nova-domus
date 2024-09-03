@@ -1,22 +1,17 @@
 #bgCards {
   flex-grow: 1;
   display: flex;
-  flex-wrap: wrap; 
   background: radial-gradient(circle, #ffffff, #ebfdfdda, #eaf2f9e1);
   backdrop-filter: blur(60px);
   border: 2px solid rgba(255, 255, 255, 0.2);
   align-items: start;
   justify-content: space-around;
-  padding: 20px; 
-  gap: 10px; 
-  margin: 0 auto; 
 }
 
 .card {
   max-width: 375px;
-  min-width: 250px; 
-  margin: 15px 10px; 
-  flex: 1 1 375px; 
+  min-width: auto;
+  margin: 15px 5px;
 }
 
 .MuiCard-root {
@@ -33,28 +28,15 @@
   height: 100px;
 }
 
-
-@media screen and (max-width: 768px) {
-  #bgCards {
-    padding: 10px;
-    gap: 8px; 
-  }
-
-  .card {
-    min-width: 200px; 
-    margin: 10px 5px;
-  }
-}
-
 @media screen and (max-width: 520px) {
   #bgCards {
-    padding: 0;
-
+    padding: 0em;
   }
 
   .card {
-    min-width: 180px;
-    margin: 8px 3px;
+    min-width: auto;
+    margin: 15px 5px;
+    transform: translateX(-3%);
     z-index: 1;
   }
 }

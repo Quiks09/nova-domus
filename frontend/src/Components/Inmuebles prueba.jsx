@@ -28,7 +28,7 @@ const Inmuebles = () => {
 
     return (
         <div className="hero">
-            <div id="bgCards">
+            <div id="bgCards" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
                 {inmuebles.map((inmueble) => (
                     <div key={inmueble._id} className="card">
                         <InmuebleCard 

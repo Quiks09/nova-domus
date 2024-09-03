@@ -16,6 +16,7 @@
   flex-grow: 1;
   min-height: 90vh;
   max-height: auto;
+  width: 100%;
 }
 
 #content {
@@ -35,4 +36,11 @@
   align-items: start;
   justify-content: center;
  }
+
+@media screen and (max-width: 520px) {
+  #body {
+    flex-direction: column;
+  }
+}
+
 
