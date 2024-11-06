@@ -100,8 +100,8 @@ const UserForm = () => {
                             </select>
                         </li>
                         <li className="field center">
-                            <button type="submit"><IconSubmit className="icon submit" />Confirmar</button>
-                            <Link to={-1}><button className="cancel"><IconCancel className="icon cancel" />Cancelar</button></Link>
+                            <button type="submit" className='confirm'><IconSubmit className="icon submit" />Confirmar</button>
+                            <Link to={-1} className="cancel"><button className="cancel"><IconCancel className="icon cancel" />Cancelar</button></Link>
                         </li>
                     </ul>
                 </form>

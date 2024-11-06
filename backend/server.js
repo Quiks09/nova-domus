@@ -10,7 +10,9 @@ configureDependencies();
 
 const conf = Dependency.get('conf');
 
-mongoose.connect(conf.db);
+mongoose.connect(conf.db)//'mongodb://localhost:127.0.0.1:27017/myapp')
+  .then(() => console.log('BD conectada correctamente !!'))
+  .catch(err => console.log(`Error conectando a la base de datosss${err}`));
 
 const app = express();
 const router = configureMiddlewares(app);
@@ -27,5 +29,6 @@ app.listen(
   /* eslint no-console: "off" */
   () => console.log(
     `El servidor está aceptando conexiones en el puerto ${conf.port}`
+
   )
 );

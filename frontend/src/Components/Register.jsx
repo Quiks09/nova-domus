@@ -95,16 +95,16 @@ const Register = () => {
             <div className="icon" onClick={() => setShowPwd(!showPwd)}>{showPwd ? <FaEye className='iconPwd'/> : <FaEyeSlash className='iconPwd'/>}</div>
           </div>
           <li className="field" style={{display:'none'}}>
-                            <label htmlFor="isEnabled">Habilitado</label>
-                            <input id="isEnabled" name="isEnabled" type="checkbox" checked={isEnabled} onChange={e => setIsEnabled(e.target.checked)} />
-                        </li>
-                        <li className="field" style={{display:'none'}}>
-                            <label htmlFor="roles">Roles</label>
-                            <select id="roles" name="roles" multiple="multiple" value={roles} onChange={(updateRoles)}>
-                                <option value="admin">Admin</option>
-                                <option value="user">User</option>
-                            </select>
-                        </li>
+            <label htmlFor="isEnabled">Habilitado</label>
+            <input id="isEnabled" name="isEnabled" type="checkbox" checked={isEnabled} onChange={e => setIsEnabled(e.target.checked)} />
+          </li>
+          <li className="field" style={{display:'none'}}>
+              <label htmlFor="roles">Roles</label>
+              <select id="roles" name="roles" multiple="multiple" value={roles} onChange={(updateRoles)}>
+                  <option value="admin">Admin</option>
+                  <option value="user">User</option>
+              </select>
+          </li>
 
           <button type="submit" id="btnlogin">Confirmar</button>
 

@@ -92,13 +92,15 @@ const InmuebleModal = ({ open, handleClose, inmueble }) => {
       >
         <Box className="modal-content">
           <Box className="modal-header">
-            <Typography variant="h5" gutterBottom>
+            <Typography style={{
+            fontFamily: 'Poppins', color:'black'}} variant="h5" gutterBottom>
               {inmueble.city}
             </Typography>
-            <Typography variant="h6">
+            <Typography className='card-price' variant="h6">
               {inmueble.price} {inmueble.currency}
             </Typography>
-            <Button onClick={handleClose} variant="outlined">Cerrar</Button>
+            <Button style={{
+            fontFamily: 'Poppins', color:'white'}} onClick={handleClose} variant="outlined">Cerrar</Button>
           </Box>
           <Box className="modal-body">
             <Grid container spacing={3}>
@@ -117,19 +119,24 @@ const InmuebleModal = ({ open, handleClose, inmueble }) => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <Box className="modal-details">
-                  <Typography variant="body1">
+                  <Typography variant="body1" style={{
+                    fontFamily: 'Poppins', color:'black'}}>
                     {inmueble.description}
                   </Typography>
-                  <Typography variant="body1">
+                  <Typography variant="body1" style={{
+                    fontFamily: 'Poppins', color:'black'}}>
                     <strong>Dirección:</strong> {inmueble.address}
                   </Typography>
-                  <Typography variant="body1">
+                  <Typography variant="body1" style={{
+                    fontFamily: 'Poppins', color:'black'}}>
                     <strong>Área:</strong> {inmueble.area} m²
                   </Typography>
-                  <Typography variant="body1">
+                  <Typography variant="body1" style={{
+                    fontFamily: 'Poppins', color:'black'}}>
                     <strong>Habitaciones:</strong> {inmueble.rooms}
                   </Typography>
-                  <Typography variant="body1">
+                  <Typography variant="body1" style={{
+                    fontFamily: 'Poppins', color:'black'}}>
                     <strong>Baños:</strong> {inmueble.bathrooms}
                   </Typography>
                 </Box>
@@ -143,7 +150,8 @@ const InmuebleModal = ({ open, handleClose, inmueble }) => {
           >
             <Box className="carousel-content">
               {selectedImage && <Carousel images={inmueble.photos} />}
-              <Button onClick={handleCarouselClose} variant="outlined">Cerrar</Button>
+              <Button style={{
+              fontFamily: 'Poppins', color:'black'}} onClick={handleCarouselClose} variant="outlined">Cerrar</Button>
             </Box>
           </Modal>
         </Box>
