@@ -19,60 +19,56 @@ import UserFormEdit from './Components/User_form_edit';
 
 const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [roles, setRoles]= useState([''])
-  const [message, setMessage] = useState('')
-  
-  useEffect(()=> {
+  const [roles, setRoles] = useState(['']);
+  const [message, setMessage] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado de autenticación
+
+  useEffect(() => {
     const auth = sessionStorage.getItem('Authorization');
     if (auth) {
-      Api.defaultHeaders.Authorization = auth
+      Api.defaultHeaders.Authorization = auth;
       const roles = JSON.parse(sessionStorage.getItem('roles') ?? '[]');
-      setRoles(roles)
+      setRoles(roles);
+      setIsAuthenticated(true); 
+    } else {
+      setIsAuthenticated(false); 
     }
     Api.setMessageForAutoCheck = setMessage;
   }, []);
 
-
-  return(
+  return (
     <div>
-      <ModalMessage message={ message } onClose={() => setMessage('')}>
-        
-      </ModalMessage>
-    <Header setShowMenu={setShowMenu} showMenu = {showMenu}/>
+      <ModalMessage message={message} onClose={() => setMessage('')} />
+      <Header 
+        setShowMenu={setShowMenu} 
+        showMenu={showMenu} 
+        isAuthenticated={isAuthenticated} 
+      />
       <div id="body">
-        <Menu showMenu = {showMenu} roles = { roles }/>
-          <Routes>
-            <Route path="/login" element={<Login setRoles={ setRoles }/>} />
-            <Route path="/register" element={<Register/>} />
-
-            <Route path="" element={<Landing/>} />
-            <Route path="/landing" element={<Landing/>} />
-            <Route path="/user-list" element={<UserList/>} />
-            <Route path="/user-form" element={<UserForm/>} />
-            <Route path="/user-form/:uuid" element={<UserFormEdit/>} />
-            <Route path="/inmuebles" element={<Inmuebles/>} />
-            <Route path="/vehiculos" element={<Vehiculos/>} />
-            <Route path="/favoritos" element={<Favoritos/>} />
-            <Route path="/mi_cuenta" element={<MiCuenta/>} />
-          </Routes>
+        <Menu showMenu={showMenu} roles={roles} />
+        <Routes>
+          <Route path="/login" element={<Login setRoles={setRoles} setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/user-list" element={<UserList />} />
+          <Route path="/user-form" element={<UserForm />} />
+          <Route path="/user-form/:uuid" element={<UserFormEdit />} />
+          <Route path="/inmuebles" element={<Inmuebles />} />
+          <Route path="/vehiculos" element={<Vehiculos />} />
+          <Route path="/favoritos" element={<Favoritos />} />
+          <Route path="/mi_cuenta" element={<MiCuenta />} />
+        </Routes>
       </div>
     </div>
-  )
-}
+  );
+};
 
 function App() {
-  
-
   return (
     <div className="App">
-
-      <Body>
-
-      </Body>
-
-      <Footer>
-        
-      </Footer>
+      <Body />
+      <Footer />
     </div>
   );
 }

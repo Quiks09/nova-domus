@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
+import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import buscar from './assets/buscar.png'
 
@@ -17,16 +18,18 @@ const Landing = () => {
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <Card sx={{ width: 300 }} className="custom-card-buscar">
-              <CardActionArea>
-                <img src={buscar} alt="" id='buscarLogo'/>
-                <CardContent className="card-content-landing">
-                  <Typography style={{ fontFamily: 'Poppins', color: 'black', fontWeight:'bold', width: '90%', marginBottom: '10px', textTransform: 'capitalize' }} variant="h5" component="div" className="card-title">
-                    Ver Inmuebles
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+            <Link to='/inmuebles' id='inmueblesCard'>
+              <Card sx={{ width: 300 }} className="custom-card-buscar">
+                <CardActionArea>
+                  <img src={buscar} alt="" id='buscarLogo'/>
+                  <CardContent className="card-content-landing">
+                    <Typography style={{ fontFamily: 'Poppins', color: 'black', fontWeight:'bold', width: '90%', marginBottom: '10px', textTransform: 'capitalize' }} variant="h5" component="div" className="card-title">
+                      Ver Inmuebles
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+              </Link>
           </Grid>
 
           <Grid item>
