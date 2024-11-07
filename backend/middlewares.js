@@ -9,7 +9,7 @@ export function configureMiddlewares(app) {
 
   const conf = Dependency.get('conf');
 
-  const origin = `http://localhost:${conf.clientPort}`;
+  const origin = `http://localhost:${conf.clientPort}`; //http://localhost
   const corsOptions = {
     origin,
     credentials: true,

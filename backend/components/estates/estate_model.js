@@ -3,7 +3,7 @@ import mongoose, { Schema } from 'mongoose';
 export const EstateModel = mongoose.model(
   'Estate',
   new Schema({
-    user_id: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
+    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     estate_type: { type: String, required: true }, // Ej: "Apartment"
     address: { type: String, required: true }, // Ej: "123 Main St, Apt 45"
     city: { type: String, required: true }, // Ej: "Miami"
