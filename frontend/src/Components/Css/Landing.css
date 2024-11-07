@@ -24,7 +24,11 @@
 }
 
 #buscarLogo {
-  width: 290px;
+  width: 300px;
+}
+
+#publicarLogo {
+  width: 300px;
 }
 
 .custom-card-publicar {

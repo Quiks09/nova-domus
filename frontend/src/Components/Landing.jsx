@@ -2,12 +2,12 @@ import * as React from 'react';
 import './Css/Landing.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import buscar from './assets/buscar.png'
+import publicar from './assets/publicar.png'
 
 const Landing = () => {
   return (
@@ -33,21 +33,18 @@ const Landing = () => {
           </Grid>
 
           <Grid item>
-            <Card sx={{ width: 300 }} className="custom-card-publicar">
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image="ruta/a/tu/imagen2.jpg"
-                  alt="Publicar un Inmueble"
-                />
-                <CardContent className="card-content-landing">
-                  <Typography style={{ fontFamily: 'Poppins', color: 'black', fontWeight:'bold', width: '90%', marginBottom: '10px', textTransform: 'capitalize' }} variant="h5" component="div" className="card-title">
-                    Publicar un Inmueble
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+            <Link to='/publicar-inmueble' id='inmueblesCard'>
+              <Card sx={{ width: 300 }} className="custom-card-publicar">
+                <CardActionArea>
+                  <img src={publicar} alt="" id='publicarLogo'/>  
+                  <CardContent className="card-content-landing">
+                    <Typography style={{ fontFamily: 'Poppins', color: 'black', fontWeight:'bold', width: '90%', marginBottom: '10px', textTransform: 'capitalize' }} variant="h5" component="div" className="card-title">
+                      Publicar un Inmueble
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Link>
           </Grid>
         </Grid>
       </div>

@@ -8,7 +8,6 @@ import { Routes, Route } from 'react-router-dom';
 import Landing from './Components/Landing';
 import UserList from './Components/User_list';
 import Inmuebles from './Components/Inmuebles';
-import Vehiculos from './Components/Vehiculos';
 import Favoritos from './Components/Favoritos';
 import MiCuenta from './Components/Mi_cuenta';
 import Footer from './Components/Footer';
@@ -16,6 +15,7 @@ import ModalMessage from './Components/ModalMessage';
 import { Api } from './lib/api';
 import UserForm from './Components/User_form';
 import UserFormEdit from './Components/User_form_edit';
+import PublicarInmueble from './Components/PublicarInmueble'
 
 const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -55,7 +55,7 @@ const Body = () => {
           <Route path="/user-form" element={<UserForm />} />
           <Route path="/user-form/:uuid" element={<UserFormEdit />} />
           <Route path="/inmuebles" element={<Inmuebles />} />
-          <Route path="/vehiculos" element={<Vehiculos />} />
+          <Route path="/publicar-inmueble" element={<PublicarInmueble />} />
           <Route path="/favoritos" element={<Favoritos />} />
           <Route path="/mi_cuenta" element={<MiCuenta />} />
         </Routes>
