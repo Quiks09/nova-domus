@@ -15,7 +15,8 @@ import ModalMessage from './Components/ModalMessage';
 import { Api } from './lib/api';
 import UserForm from './Components/User_form';
 import UserFormEdit from './Components/User_form_edit';
-import PublicarInmueble from './Components/PublicarInmueble'
+import PublicarInmueble from './Components/PublicarInmueble';
+import Vehiculos from './Components/Vehiculos';
 
 const Body = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -54,6 +55,7 @@ const Body = () => {
           <Route path="/user-list" element={<UserList />} />
           <Route path="/user-form" element={<UserForm />} />
           <Route path="/user-form/:uuid" element={<UserFormEdit />} />
+          <Route path="/vehiculos" element={<Vehiculos />} />
           <Route path="/inmuebles" element={<Inmuebles />} />
           <Route path="/publicar-inmueble" element={<PublicarInmueble />} />
           <Route path="/favoritos" element={<Favoritos />} />

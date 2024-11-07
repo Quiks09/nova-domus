@@ -32,7 +32,7 @@ const Menu = ({ showMenu, roles }) => {
       key: 'vehiculos',
       to: 'vehiculos',
       label: 'Vehiculos',
-      roles: ['none'],
+      roles: ['admin', 'user', ''],
     },
     {
       key: 'favoritos',
