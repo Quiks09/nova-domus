@@ -114,6 +114,7 @@
 @media screen and (max-width: 520px) {
   .card-container {
     min-width: 180px;
+    max-width: 95%;
   }
 
   .custom-arrow {

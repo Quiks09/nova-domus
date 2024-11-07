@@ -1,4 +1,4 @@
-const urlBase = 'http://localhost:4000/api';
+const urlBase = 'http://localhost:4000/api'; //http://localhost:4000/api
 
 export class Api {
   static defaultHeaders = {'Content-Type':'application/json'};

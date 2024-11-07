@@ -1,29 +1,56 @@
-#bgCards {
+#bgLanding {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.card {
-  width: 350px;
-  margin: 15px;
-}
-
-.MuiCard-root {
-  width: 100%;
-}
-
-.css-dnrpxu-MuiCardActions-root {
+  flex-direction: column;
   justify-content: center;
-  align-items: end;
+  align-items: center;
+  gap: 2em;
+  height: auto;
+  padding-top: 2em;
 }
 
-.css-46bh2p-MuiCardContent-root {
+.custom-card-buscar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+  overflow: hidden;
+  margin: 2em;
+}
+
+#inmueblesCard {
+  text-decoration: none;
+}
+
+#buscarLogo {
+  width: 300px;
+}
+
+#publicarLogo {
+  width: 300px;
+}
+
+.custom-card-publicar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+  overflow: hidden;
+  margin: 2em;
+}
+
+.card-content-landing {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 80%;
   padding: 16px;
-  height: 100px;
 }
 
-
-
+.card-title {
+  text-align: center;
+  margin-top: auto;
+}
