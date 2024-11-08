@@ -1,0 +1,122 @@
+.table-container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 90%;
+  text-align: center;
+}
+
+.tenant-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #959393;
+}
+
+.tenant-table th {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #959393;
+  vertical-align: middle;
+}
+
+.tenant-table td {
+  padding: 12px;
+  text-align: center;
+  border-top: 1px solid #959393;
+  border-right: 1px solid #959393;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+.table-row td {
+  text-align: center;
+}
+
+.tenant-info {
+  display: flex;
+  align-items: center;
+}
+
+.tenant-details .tenant-name {
+  font-weight: bold;
+}
+
+.tenant-price {
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #999;
+}
+
+.actions svg {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+.actions #edit {
+  font-size: 1.7em;
+  color: blueviolet;
+}
+
+.actions #delete {
+  font-size: 1.7em;
+  color: red;
+}
+
+.details-btn {
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.details-btn svg {
+  margin-right: 4px;
+}
+
+.details-btn:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 520px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tenant-info {
+    flex-direction: column;
+  }
+
+  .tenant-name {
+    font-size: 0.85em;
+  }
+
+  .tenant-table th, 
+  .tenant-table td {
+    font-size: 0.9rem; 
+    padding: 8px;
+  }
+
+  th, td {
+    max-width: 5.5em;
+    align-items: center;
+  }
+
+  .table-container {
+    max-width: 90%;
+    padding: 10px;
+  }
+}

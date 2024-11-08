@@ -5,7 +5,6 @@ import './Css/User_list.css';
 import { Link } from "react-router-dom";
 import ModalYesNo from "./ModalYesNo";
 import EditIcon from '@mui/icons-material/Edit';
-import ModalMessage from "./ModalMessage";
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 

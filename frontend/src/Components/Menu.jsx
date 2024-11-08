@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import ApartmentIcon from '@mui/icons-material/Apartment';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import Groups2Icon from '@mui/icons-material/Groups2';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'; 
 
@@ -29,10 +29,10 @@ const Menu = ({ showMenu, roles }) => {
       roles: ['admin', 'user', ''],
     },
     {
-      key: 'vehiculos',
-      to: 'vehiculos',
-      label: 'Vehiculos',
-      roles: ['admin', 'user', ''],
+      key: 'inquilinos',
+      to: 'inquilinos',
+      label: 'Inquilinos',
+      roles: ['admin'],
     },
     {
       key: 'favoritos',
@@ -61,7 +61,7 @@ const Menu = ({ showMenu, roles }) => {
         {item.key === 'landing' && <HomeIcon style={{ marginRight: '5px' }} />}
         {item.key === 'user-list' && <PeopleAltIcon style={{ marginRight: '5px' }} />}
         {item.key === 'inmuebles' && <ApartmentIcon style={{ marginRight: '5px' }} />}
-        {item.key === 'vehiculos' && <DirectionsCarIcon style={{ marginRight: '5px' }} />}
+        {item.key === 'inquilinos' && <Groups2Icon style={{ marginRight: '5px' }} />}
         {item.key === 'favoritos' && <FavoriteIcon style={{ marginRight: '5px' }} />}
         {item.key === 'mi_cuenta' && <AccountCircleIcon style={{ marginRight: '5px' }} />}
         <span className="menu-item-text">{item.label}</span>

@@ -39,7 +39,7 @@ const Landing = () => {
                   <img src={publicar} alt="" id='publicarLogo'/>  
                   <CardContent className="card-content-landing">
                     <Typography style={{ fontFamily: 'Poppins', color: 'black', fontWeight:'bold', width: '90%', marginBottom: '10px', textTransform: 'capitalize' }} variant="h5" component="div" className="card-title">
-                      Publicar un Inmueble
+                      Publicar Inmueble
                     </Typography>
                   </CardContent>
                 </CardActionArea>
