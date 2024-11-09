@@ -1,5 +1,5 @@
 {
     "port": 4000,
-    "clientPort": 3000,
+    "clientPort": 8081,
     "jwtPassword": "1234"
 }

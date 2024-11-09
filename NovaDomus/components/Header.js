@@ -1,12 +1,25 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Header = ({ showMenu, setShowMenu, isAuthenticated }) => {
+  const navigation = useNavigation();
 
   return (
-    <View style={styles.header}>
-      {showMenu}
-      Hola Mundo!
+    <View style={[styles.header, showMenu && styles.expandedHeader]}>
+      <TouchableOpacity onPress={() => setShowMenu(!showMenu)} style={styles.menuButton}>
+        <Text style={styles.menuText}>☰</Text>
+      </TouchableOpacity>
+
+      <View style={styles.headerTitleContainer}>
+        <Image source={require('../assets/logo.png')} style={styles.logo} />
+      </View>
+
+      {!isAuthenticated && (
+        <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.loginButtonText}>Iniciar Sesión</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -16,40 +29,55 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 10,
-    paddingVertical: 15,
-    backgroundColor: '#f8f8f8',
+    paddingVertical: 30,
+    backgroundColor: 'rgba(255,101,67,1)',
+    justifyContent: 'space-between',
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 9,
+    height: 100, 
   },
-  btnMenu: {
-    marginRight: 10,
+  expandedHeader: {
+    height: 250,
   },
-  headerTitle: {
+  menuButton: {
+    marginRight: 80,
+  },
+  menuText: {
+    fontSize: 35,
+    color: '#ffff',
+  },
+  headerTitleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     flex: 1,
   },
   logo: {
-    width: 40,
-    height: 40,
+    width: 100,
+    height: 100,
     resizeMode: 'contain',
+    marginRight: 10,
   },
-  logoM: {
-    width: 30,
-    height: 30,
-    resizeMode: 'contain',
-    marginLeft: 5,
+  loginButton: {
+    backgroundColor: '#179BAE',
+    top:10,
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 20,
+    borderColor: '#179BAE',
+    borderWidth: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 0.2,
+    elevation: 3,
   },
-  headerText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginLeft: 10,
-  },
-  loginHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  loginText: {
+  loginButtonText: {
+    color: '#fff',
     fontSize: 16,
-    marginLeft: 5,
+    fontWeight: '600',
   },
 });
 
