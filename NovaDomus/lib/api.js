@@ -1,5 +1,4 @@
-// Usa la IP local de tu servidor o una dirección pública si está en la nube
-const urlBase = 'http://192.168.1.48:4000/api'; // reemplaza con la IP de tu máquina o el dominio del servidor
+const urlBase = 'http://192.168.1.48:4000/api'; 
 
 export class Api {
   static defaultHeaders = { 'Content-Type': 'application/json' };

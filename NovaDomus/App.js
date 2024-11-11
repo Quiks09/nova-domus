@@ -8,6 +8,7 @@ import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import UserListScreen from './screens/UserListScreen';
 import InquilinosScreen from './screens/InquilinosScreen';
+import InmueblesScreen from './screens/InmueblesScreen';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,7 @@ export default function App() {
           </Stack.Screen>
           <Stack.Screen name="UserList" component={UserListScreen} options={{ title: 'Lista de Usuarios' }} />
           <Stack.Screen name="Inquilinos" component={InquilinosScreen} options={{ title: 'Lista de Inquilinos' }} />
+          <Stack.Screen name="Inmuebles" component={InmueblesScreen} options={{ title: 'Lista de Inmuebles' }} />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>

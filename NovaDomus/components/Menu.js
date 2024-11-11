@@ -12,7 +12,7 @@ const Menu = ({ roles, setShowMenu }) => {
     { key: 'Home', label: 'Inicio', icon: <FontAwesome name="home" size={24} color="white" />, roles: ['admin', 'user', ''] },
     { key: 'UserList', label: 'Usuarios', icon: <MaterialIcons name="people" size={24} color="white" />, roles: ['admin'] },
     { key: 'Inquilinos', label: 'Inquilinos', icon: <MaterialCommunityIcons name="account-group" size={24} color="white" />, roles: ['admin'] },
-    { key: 'inmuebles', label: 'Inmuebles', icon: <MaterialIcons name="apartment" size={24} color="white" />, roles: ['admin', 'user', ''] },
+    { key: 'Inmuebles', label: 'Inmuebles', icon: <MaterialIcons name="apartment" size={24} color="white" />, roles: ['admin', 'user', ''] },
   ];
 
   const filteredItems = roles.length ? items.filter(item => item.roles.some(role => roles.includes(role))) : items.filter(item => item.roles.includes(''));

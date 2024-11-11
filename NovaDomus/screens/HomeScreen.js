@@ -11,20 +11,20 @@ const HomeScreen = () => {
         <Text style={styles.landingTitle}>¿Qué vas a hacer hoy?</Text>
         
         <TouchableOpacity
-          style={styles.customCard}
+          style={styles.card}
           onPress={() => navigation.navigate('Inmuebles')}
         >
-          <Image source={require('../assets/buscar.png')} style={styles.logo} />
+          <Image source={require('../assets/buscar.png')} style={styles.cardImage} />
           <View style={styles.cardContent}>
             <Text style={styles.cardTitle}>Ver Inmuebles</Text>
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.customCard}
+          style={styles.card}
           onPress={() => navigation.navigate('PublicarInmueble')}
         >
-          <Image source={require('../assets/publicar.png')} style={styles.logo} />
+          <Image source={require('../assets/publicar.png')} style={styles.cardImage} />
           <View style={styles.cardContent}>
             <Text style={styles.cardTitle}>Publicar Inmueble</Text>
           </View>
@@ -54,32 +54,34 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontFamily: 'Poppins',
   },
-  customCard: {
-    width: 300,
+  card: {
+    width: 200,
     borderRadius: 10,
+    overflow: 'hidden',
+    backgroundColor: 'white',
+    marginVertical: 20,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.2,
     shadowRadius: 16,
-    backgroundColor: 'white',
-    marginVertical: 20,
+    elevation: 3,
     alignItems: 'center',
-    overflow: 'hidden',
   },
-  logo: {
-    width: 300,
+  cardImage: {
+    width: '100%',
     height: 150,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
   },
   cardContent: {
+    padding: 10,
     alignItems: 'center',
-    paddingVertical: 10,
   },
   cardTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'black',
     textAlign: 'center',
+    fontFamily: 'Poppins',
   },
 });
 
