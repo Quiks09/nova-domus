@@ -54,9 +54,9 @@ const UserList = () => {
                 {item.isEnabled ? 'Activo' : 'Inactivo'}
             </Text>
             <View style={styles.actions}>
-                <TouchableOpacity onPress={() => navigation.navigate('UserForm', { uuid: item.uuid })}>
+                {/*<TouchableOpacity onPress={() => navigation.navigate('UserForm', { uuid: item.uuid })}>
                     <FontAwesome name="edit" style={styles.editIcon} />
-                </TouchableOpacity>
+                </TouchableOpacity>*/} 
                 <TouchableOpacity onPress={() => deleteUser(item.uuid)}>
                     <FontAwesome name="trash" style={styles.deleteIcon} />
                 </TouchableOpacity>
@@ -68,9 +68,9 @@ const UserList = () => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.headerText}>Lista de Usuarios</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('UserForm')}>
+                {/*<TouchableOpacity onPress={() => navigation.navigate('UserForm')}>
                     <FontAwesome name="user-plus" style={styles.addIcon} />
-                </TouchableOpacity>
+                </TouchableOpacity>*/} 
             </View>
             <FlatList
                 data={users}

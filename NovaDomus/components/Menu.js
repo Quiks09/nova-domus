@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: 'auto', // Cambia la altura en pantallas pequeñas
-    width: '100%', // Expande el menú a pantalla completa
+    height: 'auto', 
+    width: '100%', 
   },
   menuOptions: {
     alignItems: 'center',
@@ -63,14 +63,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
     marginBottom: 15,
     borderRadius: 6,
   },
   menuItemSmall: {
-    flexDirection: 'column', // Cambia a columna en pantallas pequeñas
-    marginBottom: 5, // Reduce el margen en pantallas pequeñas
-    width: 105,
+    flexDirection: 'column', 
+    marginBottom: 5, 
+    width: 90,
   },
   menuItemText: {
     color: 'white',
@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   menuItemTextSmall: {
-    fontSize: 14, // Texto más pequeño en pantallas pequeñas
-    marginLeft: 0, // Elimina el margen izquierdo
+    fontSize: 13, 
+    marginLeft: 0, 
     textAlign: 'center',
   },
 });
