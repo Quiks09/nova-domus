@@ -42,7 +42,6 @@ const InmuebleModalScreen = ({ visible, onClose, inmueble }) => {
               showsHorizontalScrollIndicator={false}
             />
 
-            {/* Property Details */}
             <View style={styles.detailsContainer}>
               <Text style={styles.detail}><Text style={styles.bold}>Dirección:</Text> {inmueble.address}</Text>
               <Text style={styles.detail}><Text style={styles.bold}>Área:</Text> {inmueble.area} m²</Text>
@@ -56,7 +55,6 @@ const InmuebleModalScreen = ({ visible, onClose, inmueble }) => {
           </TouchableOpacity>
         </View>
 
-        {/* Full-size Image Viewer Modal */}
         <Modal visible={imageViewerVisible} transparent animationType="fade">
           <View style={styles.fullImageViewerContainer}>
             <FlatList

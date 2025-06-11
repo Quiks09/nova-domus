@@ -1,4 +1,4 @@
-const urlBase = 'http://192.168.1.48:4000/api'; 
+const urlBase = 'http:///192.168.114.190:4000/api'; 
 
 export class Api {
   static defaultHeaders = { 'Content-Type': 'application/json' };
